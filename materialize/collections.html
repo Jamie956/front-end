@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/materialize.css" />
+
+	</head>
+	<style>
+		/* label color */
+		
+		.input-field label {
+			color: #000;
+		}
+		/* label focus color */
+		
+		.input-field input[type=text]:focus+ label {
+			color: #000;
+		}
+		/* label underline focus color */
+		
+		.input-field input[type=text]:focus {
+			border-bottom: 1px solid #000;
+			box-shadow: 0 1px 0 0 #000;
+		}
+		/* valid color */
+		
+		.input-field input[type=text].valid {
+			border-bottom: 1px solid white;
+			box-shadow: 0 1px 0 0 white;
+		}
+		/* invalid color */
+		
+		.input-field input[type=text].invalid {
+			border-bottom: 1px solid #000;
+			box-shadow: 0 1px 0 0 #000;
+		}
+		/* icon prefix focus color */
+		
+		.input-field .prefix.active {
+			color: #000;
+		}
+	</style>
+
+	<body>
+
+		<ul class="collection">
+			<li class="collection-item">Alvin</li>
+			<li class="collection-item">Alvin</li>
+			<li class="collection-item">Alvin</li>
+			<li class="collection-item">Alvin</li>
+		</ul>
+
+		<div class="collection">
+			<a href="#!" class="collection-item">Alvin</a>
+			<a href="#!" class="collection-item active">Alvin</a>
+			<a href="#!" class="collection-item">Alvin</a>
+			<a href="#!" class="collection-item">Alvin</a>
+		</div>
+
+		<div class="row">
+			<form class="col s12">
+				<div class="row">
+					<div class="input-field col s6">
+						<input placeholder="Placeholder" id="first_name" type="text" class="validate">
+						<label for="first_name">First Name</label>
+					</div>
+					<div class="input-field col s6">
+						<input id="last_name" type="text" class="validate">
+						<label for="last_name">Last Name</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input disabled value="I am not editable" id="disabled" type="text" class="validate">
+						<label for="disabled">Disabled</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="password" type="password" class="validate">
+						<label for="password">Password</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="email" type="email" class="validate">
+						<label for="email">Email</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12">
+						This is an inline input field:
+						<div class="input-field inline">
+							<input id="email" type="email" class="validate">
+							<label for="email" data-error="wrong" data-success="right">Email</label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s6">
+				<input value="李四" id="first_name2" type="text" class="validate">
+				<label class="active" for="first_name2">姓名</label>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.js"></script>
+		<script>
+			$(document).ready(function() {
+				Materialize.updateTextFields();
+			});
+		</script>
+	</body>
+
+</html>
