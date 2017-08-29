@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/select2.css" />
+		<style type="text/css">
+			body {
+				padding: 40px;
+			}
+		</style>
+
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="js/select2.full.js"></script>
+
+	</head>
+	<script>
+		$(document).ready(function() {
+			$(".js-example-tags").select2({
+				tags: true
+			})
+
+			$('#tagForm').submit(function(e) {
+				var _data = $('.js-example-tags').val();
+				alert(_data);
+			})
+		});
+	</script>
+
+	<body>
+
+		<form action="" id="tagForm">
+			<select class="js-example-tags" multiple="multiple">
+				<option value="AL">Alabama</option>
+				<option value="WY">Wyoming</option>
+			</select>
+			<button type="submit">Submit</button>
+		</form>
+
+	</body>
+
+</html>
