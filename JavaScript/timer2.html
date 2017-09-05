@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		function to(){
+			var timeSpan=document.getElementById("time");
+			var t = parseInt(timeSpan.innerHTML)-1;
+			timeSpan.innerHTML = t;
+			if(t==0){
+				window.location.replace("http://www.baidu.com");
+			}
+		}
+		setInterval(to,1000);
+	</script>
+	<body>
+		<span id="time" style="color: red;">3</span>
+		后跳转到百度
+	</body>
+</html>

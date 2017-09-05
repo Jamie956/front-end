@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		window.onload = function() {
+			var oText1 = document.getElementById("text1");
+
+			oText1.onblur = function() {
+				alert('onblur');
+			}
+
+			oText1.onchange = function() {
+				alert("text change and onblur");
+			}
+
+		}
+	</script>
+
+	<body>
+		<input type="text" id="text1" size="20px" />
+	</body>
+
+</html>

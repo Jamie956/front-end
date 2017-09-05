@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	</head>
+	
+	<script>
+		var arr = ["a","b","c"];
+		var arr_detail = {
+			"a":{"url":"a_url","name":"a_name"},
+			"b":{"url":"b_url","name":"b_name"},
+			"c":{"url":"c_url","name":"c_name",
+				"list":[
+					{"url":"c_list1_url","name":"c_list1_name"},
+					{"url":"c_list2_url","name":"c_list2_name"}
+				]
+			}
+		};
+		$.each(arr, function(key, val){
+			console.log("key-->>"+key);
+			console.log("val-->>"+val);
+			
+			var setkey = val;
+			console.log("url -> "+arr_detail[setkey].url);
+			console.log("name -> "+arr_detail[setkey].name);
+			
+			if(setkey == "c"){
+				for(index in arr_detail[setkey].list){
+					console.log("list.url-->>"+arr_detail[setkey].list[index].url);
+					console.log("list.name-->>"+arr_detail[setkey].list[index].name);
+				}	
+			};
+		});
+	</script>
+
+	<body>
+	</body>
+
+</html>

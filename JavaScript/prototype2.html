@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		function baseFun() {}
+		baseFun.prototype._fun1 = function() {
+			alert('_fun1');
+		}
+		baseFun.prototype._fun2 = function() {
+			alert('_fun2');
+		}
+		baseFun.prototype._fun3 = function() {
+			var that = this;
+			that._fun2();
+		}
+		var myFun = new baseFun();
+		myFun._fun1();
+		myFun._fun2();
+		myFun._fun3();
+	</script>
+
+	<body>
+	</body>
+
+</html>

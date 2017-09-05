@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		function myfun1(a) {
+			alert(a);
+		}
+
+		function myfun2() {
+			for(var i = 0; i < arguments.length; i++) { //arguments is array
+				alert(arguments[i]);
+			}
+		}
+
+		function sum(a, b) {
+			return a + b;
+		}
+
+		myfun1('e',5,7);//1
+
+		myfun2(1, 2, 'a', 'b'); //1  2 a b 
+
+		alert(sum(1,2));//3
+	</script>
+
+	<body>
+	</body>
+
+</html>

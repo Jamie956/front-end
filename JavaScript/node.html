@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		window.onload = function() {
+			var oUl = document.getElementById("ul1");
+			//			alert(oUl.childNodes.length);//7
+			var aChil = oUl.childNodes;
+			for(var i = 0; i < aChil.length; i++) {
+				alert(aChil[i].nodeType);
+			}
+		}
+	</script>
+
+	<body>
+		<ul id="ul1">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+
+</html>

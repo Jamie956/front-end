@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		var json={a:12,b:23,c:'abc',d:'+-*/',e:'5'};
+		alert(typeof json);//object
+		alert(json.d);//+-*/
+		alert(json.a + json.b);//35
+		alert(json.a + json.e);//125
+		
+		var json1={name:{firstName:'zhang',lastName:'san'},age:23};
+		alert(json1.age);//23
+		alert(json1.name.firstName);//zhang
+		
+		for(var i in json){//foreach
+			alert(json[i]);//12 23 abc +-*/ 5
+		}
+	</script>
+	<body>
+	</body>
+</html>

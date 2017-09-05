@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		window.onload = function() {
+			var oText = document.getElementById("text1");
+
+//			oText.onkeydown=function(ev){
+//				var oEvent = ev || event;
+//				alert(oEvent.keyCode);
+//				if(oEvent.keyCode !=8 &&(oEvent.keyCode<96 || oEvent.keyCode>105)){
+//					return false;
+//				}
+//			}
+
+			oText.onkeydown = function(e) {
+//				alert(e.keyCode);
+				if(e.keyCode != 8 && (e.keyCode < 96 || e.keyCode > 105)) {
+					return false;
+				}
+			}
+		}
+	</script>
+
+	<body>
+		<input type="text" id="text1" />
+	</body>
+
+</html>

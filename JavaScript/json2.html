@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	</head>
+	<script>
+		//defined a str, change to json obj and get val
+//		var str = '{ "name": "tomcat", "sex": "man" }';
+//		var obj = JSON.parse(str);
+//		alert(obj.name);
+//		alert(obj.sex);
+		
+		//json obj change to str
+//		var str = '{ "name": "tomcat", "sex": "man" }';
+//		var obj = JSON.parse(str);
+//		var str = JSON.stringify(obj);
+//		alert(str);
+	
+//set key-value to json 1
+//var jsonObj = {data:
+//					{sCol:{table1: "111",table2: "222",table3: "333"}}
+//			};
+//
+//jsonObj.data.sCol['table4'] = '444' ;
+//
+//console.log(jsonObj);
+//console.log(jsonObj.data.sCol.table4);
+
+//set key-value to json 2
+//var jsonObj = {sCol:{table1: "111",table2: "222",table3: "333"}};
+//
+//jsonObj.sCol['table4'] = '444' ;
+//
+//console.log(jsonObj);
+//console.log(jsonObj.sCol.table4);
+
+//set key-value to json 3
+//var jsonObj = {table1: "111",table2: "222",table3: "333"};
+//
+//jsonObj['table4'] = '444' ;
+//
+//console.log(jsonObj);
+//console.log(jsonObj.table4);
+
+//reset value
+//var jsonObj = {table1: "111",table2: "222",table3: "333"};
+//
+//jsonObj['table3'] = 'new' ;
+//
+//console.log(jsonObj);
+//console.log(jsonObj.table4);
+
+//it's undefined, if can't find the key
+//var jsonObj = {table1: "111",table2: "222",table3: "333"};
+//
+//console.log(jsonObj);
+//console.log(jsonObj.table4);
+
+
+//var jsonObj = {};
+//jsonObj['table1'] = 'value1' ;
+//console.log(jsonObj);
+//console.log(jsonObj.table1);
+
+var str = '{}';
+var obj = JSON.parse(str);
+
+obj['table1'] = 'value1' ;
+console.log(obj);
+console.log(obj.table1);
+
+	</script>
+
+	<body>
+	</body>
+
+</html>

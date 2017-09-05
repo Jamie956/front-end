@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	<script>
+		$(function(){
+			var arr = ["a","b","c"];
+			var arr2 = ["1","2","3"];
+			var arr3 = ["c","d","a","b"];
+			
+			var constructor = arr.constructor;
+			var concat = arr.concat(arr2);
+			var indexOf = arr.indexOf("b");
+			var isArray = Array.isArray(arr);
+			var lastIndexOf = arr.lastIndexOf("c");
+			var reverse = arr.reverse();
+			var str = arr.toString();
+			var slice = arr3.slice(1,4);
+			var sort = arr3.sort();
+			var join = arr.join(" - ");
+			
+			console.log("type -> "+ typeof arr);
+			console.log("constructor -> "+constructor);
+			console.log("concat -> "+concat);
+			console.log("indexOf -> "+indexOf);
+			console.log("isArray -> "+isArray);
+			console.log("lastIndexOf -> "+lastIndexOf);
+			console.log("reverse -> "+reverse);
+			console.log("str -> "+ typeof str);
+			console.log("slice -> "+slice);
+			console.log("sort -> "+sort);
+			console.log("join -> "+join);
+			
+			
+			
+//			var fill = arr.fill("f");			
+//			console.log("fill -> "+fill);
+//			var copyWithin = arr.copyWithin(2,0);
+//			console.log("copyWithin -> "+copyWithin);
+//			function check(data){
+//				return data = "a";
+//			};
+//			
+//			var find = arr.find(check);
+//			var every = arr.every(check);
+//			var findIndex = arr.findIndex(check);
+//			
+//			console.log("find-->>"+find);
+//			console.log("every-->>"+every);
+//			console.log("findIndex-->>"+findIndex);
+//			
+//			function myFilter(data){
+//				return data != "a";
+//			};			
+//			var arr = ["a","b","c"];
+//			var arr_filter = arr.filter(myFilter);
+//			console.log("arr_filter-->>"+arr_filter);
+//			
+//			function myForeach(item,index){
+//				console.log("index-->>"+index);
+//				console.log("item-->>"+item);
+//			};
+//			arr.forEach(myForeach);
+//			
+//			var num = [4, 9, 16, 25];
+//			var num_map = num.map(Math.sqrt);
+//			console.log("num_map-->>"+num_map);
+			
+		});
+	</script>
+	<body>
+	</body>
+</html>

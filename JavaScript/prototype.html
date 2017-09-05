@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		function Person(name, age) {
+			this.name = name;
+			this.age = age;
+		}
+		Person.prototype.sayHi = function() {
+			alert("my name is " + this.name + " age of " + this.age);
+		}
+		var p1 = new Person("john", 21);
+		var p2 = new Person("lily", 15);
+		
+		p1.sayHi();
+		p2.sayHi();
+		
+		alert(p1.sayHi == p2.sayHi); //true
+	</script>
+
+	<body>
+	</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	</head>
+	<script>
+		$(function(){
+			$("#show").click(function(){
+		    	$("#d").addClass("pink");
+		   	});
+		   	$("#hidden").click(function(){
+		    	$("#d").removeClass("pink");
+		    });
+		   	$("#showOrHidden").click(function(){
+		    	$("#d").toggleClass("pink");
+		    });		    
+		});
+	</script>
+	<style>
+		.pink{
+		   background-color:pink;
+		}
+	</style>
+	<body>
+		<button id="show">增加背景色</button>
+		<br />
+		<button id="hidden">删除背景色</button>
+		<br />
+		<button id="showOrHidden">增加或删除背景色</button>
+		<div id="d" class="pink">Hello JQuery</div>		
+	</body>
+</html>

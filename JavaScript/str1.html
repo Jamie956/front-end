@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		var s = "abcabcabcabc";
+		alert(s.search("ee"));//-1 no found
+		alert(s.search("a"));//0 found 0
+		alert(s.substring(2,5));//cab find the string, index = 2-4, length = 5-2 
+		alert(s.charAt(5));//c find the index, index = 5
+		
+		var ss = "ab;ac;ad;ae;af";
+		alert(ss.length);//length of string
+		
+		var aS = ss.split(";");
+		//alert(aS.length);//5 split the string by ';', result is a array
+		
+		for(var i=0;i<aS.length;i++){//foreach array aS
+			alert(aS[i]);//ab ac ad ae af
+		}
+	</script>
+	<body>
+	</body>
+</html>

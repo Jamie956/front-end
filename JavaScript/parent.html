@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		window.onload=function(){
+			var aA = document.getElementsByTagName("a");
+			for(var i=0;aA.length;i++){
+				aA[i].onclick=function(){
+					this.parentNode.style.display="none";
+				}
+			}
+		}
+	</script>
+	<body>
+		<ul id="ul1">
+			<li><a>apple</a> </li>
+			<li><a>banana</a> </li>
+			<li><a>pineapple</a> </li>
+			<li><a>mango</a> </li>
+			<li><a>pear</a> </li>
+		</ul>
+	</body>
+</html>
