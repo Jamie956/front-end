@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/materialize.css" />
+	</head>
+
+	<body>
+
+		<div id="modal2" class="modal">
+			<div class="modal-content">
+				<h4>Title</h4>
+				<p>This is a text</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">confirm</a>
+				<a href="#!" class="waves-effect waves-green btn-flat close">close</a>
+			</div>
+		</div>
+		<button data-target="modal2" class="btn">click</button>
+		<button class="btn open">open</button>
+
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				$('.modal').modal();
+			});
+			$('.open').click(function(){
+				$('#modal2').modal('open');
+			});
+			$('.close').click(function(){
+				$('#modal2').modal('close');
+			});          
+		</script>
+	</body>
+
+</html>
