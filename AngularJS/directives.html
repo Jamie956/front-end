@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="angular/angular.min.js" ></script>
+	<body ng-app="myApp">
+		
+		<!--<my-tag></my-tag>
+		<script>
+			angular.module("myApp", []).directive("myTag", function() {
+				return {
+					template: "<h1>Hello World</h1>"
+				};
+			});
+		</script>-->
+		
+		<!--<div my-tag></div>
+		<script>
+			angular.module("myApp", []).directive("myTag", function() {
+				return {
+					template: "<h1>Hello World</h1>"
+				};
+			});
+		</script>-->
+
+		<div class="my-tag"></div>
+		<script>
+			angular.module("myApp", []).directive("myTag", function() {
+				return {
+					restrict: "C",
+					template: "<h1>Hello World</h1>"
+				};
+			});
+		</script>
+		
+	</body>
+
+</html>

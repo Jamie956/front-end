@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+	<body>
+		<!--获取url-->
+		<!--<div ng-app="myApp" ng-controller="myCtrl">
+			<h3>{{myUrl}}</h3>
+		</div>
+		<script>
+			var app = angular.module('myApp', []);
+			app.controller('myCtrl', function($scope, $location) {
+				$scope.myUrl = $location.absUrl();
+			});
+		</script>-->
+
+		<!--<div ng-app="myApp" ng-controller="myCtrl">
+			<h1>{{myWelcome}}</h1>
+		</div>
+		<script>
+			var app = angular.module('myApp', []);
+			app.controller('myCtrl', function($scope, $http) {
+				$http.get("welcome.htm").then(function(response) {
+					$scope.myWelcome = response.data;
+				});
+			});
+		</script>-->
+
+		<!--<div ng-app="myApp" ng-controller="myCtrl">
+			<h1>{{myHeader}}</h1>
+		</div>
+		<script>
+			var app = angular.module('myApp', []);
+			app.controller('myCtrl', function($scope, $timeout) {
+				$scope.myHeader = "Hello World!";
+				$timeout(function() {
+					$scope.myHeader = "How are you today?";
+				}, 2000);
+			});
+		</script>-->
+
+		<!--<div ng-app="myApp" ng-controller="myCtrl">
+			<h1>{{theTime}}</h1>
+		</div>
+		<script>
+			var app = angular.module('myApp', []);
+			app.controller('myCtrl', function($scope, $interval) {
+				$scope.theTime = new Date().toLocaleTimeString();
+				$interval(function() {
+					$scope.theTime = new Date().toLocaleTimeString();
+				}, 1000);
+			});
+		</script>-->
+
+		<!--<div ng-app="myApp" ng-controller="myCtrl">
+			<h1>{{hex}}</h1>
+		</div>
+		<script>
+			var app = angular.module('myApp', []);
+			app.service('hexafy', function() {
+				this.myFunc = function(x) {
+					return x.toString(16);
+				}
+			});
+			app.controller('myCtrl', function($scope, hexafy) {
+				$scope.hex = hexafy.myFunc(255);
+			});
+		</script>-->
+
+		<!--<div ng-app="myApp">
+			<h1>{{255 | myFormat}}</h1>
+		</div>
+		<script>
+			var app = angular.module('myApp', []);
+			app.service('hexafy', function() {
+				this.myFunc = function(x) {
+					return x.toString(16);
+				}
+			});
+			app.filter('myFormat', ['hexafy', function(hexafy) {
+				return function(x) {
+					return hexafy.myFunc(x);
+				};
+			}]);
+		</script>-->
+
+		<div ng-app="myApp" ng-controller="myCtrl">
+			<ul>
+				<li ng-repeat="x in counts">{{x | myFormat}}</li>
+			</ul>
+		</div>
+		<script>
+			var app = angular.module('myApp', []);
+			app.service('hexafy', function() {
+				this.myFunc = function(x) {
+					return x.toString(16);
+				}
+			});
+			app.filter('myFormat', ['hexafy', function(hexafy) {
+				return function(x) {
+					return hexafy.myFunc(x);
+				};
+			}]);
+			app.controller('myCtrl', function($scope) {
+				$scope.counts = [255, 251, 200];
+			});
+		</script>
+	</body>
+
+</html>
