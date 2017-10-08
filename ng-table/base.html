@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/ng-table.min.css" />
+		
+		<script type="text/javascript" src="js/angular.js" ></script>
+		<script type="text/javascript" src="js/ng-table.min.js" ></script>
+		
+	</head>
+
+	<body ng-app="ngTableApp">
+		<div ng-controller="selectFilterController">
+			<table ng-table="tableParams" class="table" show-filter="true">
+				<tbody>
+					<tr ng-repeat="row in $data">
+						<td data-title="'Name'" filter="{name: 'select'}" filter-data="names" sortable="'name'">{{ row.name }}</td>
+						<td data-title="'Age'" filter="{age: 'text'}" sortable="'age'">{{ row.age }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+
+	<script>
+		var app = angular.module('ngTableApp', ['ngTable'])
+          .controller('selectFilterController', function($scope, $filter, $q, NgTableParams) {
+            var data = [{name: "Moroni", age: 51},
+                        {name: "Tiancum", age: 43},
+                        {name: "Jacob", age: 27},
+                        {name: "Nephi", age: 29},
+                        {name: "Enos", age: 34},
+                        {name: "Tiancum", age: 43},
+                        {name: "Jacob", age: 27},
+                        {name: "Nephi", age: 29},
+                        {name: "Enos", age: 34},
+                        {name: "Tiancum", age: 43},
+                        {name: "Jacob", age: 27},
+                        {name: "Nephi", age: 29},
+                        {name: "Enos", age: 34},
+                        {name: "Tiancum", age: 43},
+                        {name: "Jacob", age: 27},
+                        {name: "Nephi", age: 29},
+                        {name: "Enos", age: 34}
+                    ];
+            $scope.names = [{id: "", title: ""}, {id: 'Moroni', title: 'Moroni'}, {id: 'Enos', title: 'Enos'}, {id: 'Nephi', title: 'Nephi'}];
+            $scope.tableParams = new NgTableParams({page: 1, count: 10}, {data: data});
+          })		
+	</script>
+</html>
