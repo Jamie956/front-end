@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>chart created with amCharts | amCharts</title>
+		<meta name="description" content="chart created using amCharts live editor" />
+		
+		<script type="text/javascript" src="js/amcharts.js" ></script>
+		<script type="text/javascript" src="js/serial.js" ></script>
+		
+
+		<script type="text/javascript">
+			AmCharts.makeChart("chartdiv",
+				{
+					"type": "serial",
+					"categoryField": "category",
+					"startDuration": 1,
+					"theme": "light",
+					"categoryAxis": {
+						"gridPosition": "start"
+					},
+					"trendLines": [],
+					"graphs": [
+						{
+							"balloonText": "[[title]] - [[category]] - [[value]]",
+							"fillAlphas": 1,
+							"id": "AmGraph-1",
+							"labelText": "[[value]]",
+							"title": "count",
+							"type": "column",
+							"valueField": "count"
+						},
+						{
+							"balloonText": "[[title]] of [[category]]:[[value]]",
+							"bullet": "round",
+							"id": "AmGraph-2",
+							"labelText": "[[value]]",
+							"lineThickness": 2,
+							"title": "amount(*100)",
+							"valueField": "amount"
+						}					
+					],
+					"guides": [],
+					"valueAxes": [
+						{
+							"id": "ValueAxis-1",
+							"title": "y"
+						}
+					],
+					"allLabels": [],
+					"balloon": {},
+					"legend": {
+						"enabled": true,
+						"useGraphSettings": true
+					},
+					"titles": [
+						{
+							"id": "Title-1",
+							"size": 15,
+							"text": "Chart Title"
+						}
+					],
+					"dataProvider": [
+						{
+							"category": "09/01",
+							"amount": 7.20,
+							"count": 7,
+						},
+						{
+							"category": "09/02",
+							"amount": 6.5,
+							"count": 6,
+						},
+						{
+							"category": "09/03",
+							"amount": 7.7,
+							"count": 7,
+						},						
+					]
+				}
+			);
+		</script>
+	</head>
+	<body>
+		<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+	</body>
+</html>
