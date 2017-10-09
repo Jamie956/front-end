@@ -16,8 +16,14 @@
 	<script type="text/javascript" src="js/amcharts.js" ></script>
 	<script type="text/javascript" src="js/serial.js" ></script>
 	<script type="text/javascript" src="js/light.js" ></script>	
-	
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	
+	
+<!--<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>	-->
 	
 	<!-- Chart code -->
 	<script>
@@ -70,7 +76,8 @@
 		    "title": "Count",
 		    "useLineColorForBulletBorder": true,
 		    "valueField": "count",
-		    "balloonText": "[[title]]<br /><b style='font-size: 130%'>[[value]]</b>"
+		    "balloonText": "[[title]]<br /><b style='font-size: 130%'>[[value]]</b>",
+//		    "connect": false
 		  }],
 		  //x
 		  "categoryField": "date",
@@ -78,9 +85,7 @@
 		    "parseDates": true,
 		    "dashLength": 1,
 		    "minorGridEnabled": true,
-//		    "minPeriod":"DD",
-//			"period":"DD",
-			"period":"YYYY",
+		    "minPeriod":"DD",
 			"equalSpacing": true,
 			"dateFormats":[{period:'fff',format:'JJ:NN:SS'},
 							{period:'ss',format:'JJ:NN:SS'},
@@ -88,10 +93,10 @@
 							{period:'hh',format:'JJ:NN'},
 							{period:'DD',format:'MMM DD'},
 							{period:'WW',format:'MMM DD'},
-							{period:'MM',format:'MMM YYYY'},
-							{period:'YYYY',format:'MMM YYYY'}],
-							
-		  },		  
+							{period:'MM',format:'MMM'},
+							{period:'YYYY',format:'YYYY'}],
+		  },		 
+		  
 		  //others
 		  "chartCursor": {
 		    "pan": true,
@@ -123,13 +128,14 @@
 
 		});
 		
-		
-		function updateChart(data){
+		function updateChart(data,minPeriod){
 			chart.dataProvider = data;
+			chart.categoryAxis.minPeriod = minPeriod;
 			chart.validateNow();
 			chart.validateData();
+			
+			console.log(chart);
 		} 		
-		
 		
 		$(function(){
 			$('#btn-range').click(function(){
@@ -137,7 +143,7 @@
 			      type : 'GET',
 			      dataType : "json"
 			    }).done(function(data) {
-					updateChart(data);
+					updateChart(data,'DD');
 			    }).fail(function(data) {
 			    });
 			});
@@ -147,7 +153,17 @@
 			      type : 'GET',
 			      dataType : "json"
 			    }).done(function(data) {
-					updateChart(data);
+					updateChart(data,'DD');
+			    }).fail(function(data) {
+			    });
+			})	
+			
+			$('#btn-month').click(function(){
+				$.ajax('json/date_month.json', {
+			      type : 'GET',
+			      dataType : "json"
+			    }).done(function(data) {
+					updateChart(data,'MM');
 			    }).fail(function(data) {
 			    });
 			})	
@@ -157,24 +173,12 @@
 			      type : 'GET',
 			      dataType : "json"
 			    }).done(function(data) {
-					updateChart(data);
+					updateChart(data,'YYYY');
 			    }).fail(function(data) {
 			    });
-			})		
+			})			
 			
-			$('#btn-month').click(function(){
-				$.ajax('json/date_month.json', {
-			      type : 'GET',
-			      dataType : "json"
-			    }).done(function(data) {
-					updateChart(data);
-			    }).fail(function(data) {
-			    });
-			})				
 		})
-		
-
-		
 		
 	</script>	
 	<body>
