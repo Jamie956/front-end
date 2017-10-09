@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<!-- Styles -->
+	<style>
+	#chartdiv {
+	  width: 100%;
+	  height: 500px;
+	}						
+	</style>
+	
+	<!-- Resources -->
+	<script type="text/javascript" src="js/amcharts.js" ></script>
+	<script type="text/javascript" src="js/serial.js" ></script>
+	<script type="text/javascript" src="js/light.js" ></script>	
+	
+	<!-- Chart code -->
+	<script>
+		var chart = AmCharts.makeChart("chartdiv", {
+		  "type": "serial",
+		  "theme": "light",
+		  "dataDateFormat": "YYYY-MM-DD",
+		  //Y left
+		  "valueAxes": [{
+		    "id": "y_total",
+		    "title": "Total",
+		    "position": "left",
+		    "autoGridCount": false,
+		    "labelFunction": function(value) {
+		      return "$" + Math.round(value);
+		    }
+		  }, {//Y right
+		    "id": "y_count",
+		    "title": "Count",
+		    "gridAlpha": 0,
+		    "position": "right",
+		    "autoGridCount": false,
+		  }],
+		  //bar total
+		  "graphs": [{
+		    "id": "bar_total",
+		    "valueAxis": "y_total",
+		    "lineColor": "#62cf73",
+		    "fillColors": "#62cf73",
+		    "fillAlphas": 1,
+		    "type": "column",
+		    "title": "Total",
+		    "valueField": "total",
+		    "clustered": false,
+		    "columnWidth": 0.3,
+		    "legendValueText": "$[[value]]",
+		    "balloonText": "[[title]]<br /><b style='font-size: 130%'>$[[value]]</b>",
+		    "precision": 2
+		  }, {//line count
+		    "id": "line_count",
+		    "valueAxis": "y_count",
+		    "bullet": "round",
+		    "bulletBorderAlpha": 1,
+		    "bulletColor": "#FFFFFF",
+		    "bulletSize": 5,
+		    "hideBulletsCount": 50,
+		    "lineThickness": 2,
+		    "lineColor": "#20acd4",
+		    "type": "smoothedLine",
+		    "title": "Count",
+		    "useLineColorForBulletBorder": true,
+		    "valueField": "count",
+		    "balloonText": "[[title]]<br /><b style='font-size: 130%'>[[value]]</b>"
+		  }],
+		  //x
+		  "categoryField": "date",
+		  "categoryAxis": {
+		    "parseDates": true,
+		    "dashLength": 1,
+		    "minorGridEnabled": true
+		  },		  
+		  //others
+		  "chartCursor": {
+		    "pan": true,
+		    "valueLineEnabled": true,
+		    "valueLineBalloonEnabled": true,
+		    "cursorAlpha": 0,
+		    "valueLineAlpha": 0.2
+		  },
+
+		  "legend": {
+		    "useGraphSettings": true,
+		    "position": "top"
+		  },
+		  "balloon": {
+		    "borderThickness": 1,
+		    "shadowAlpha": 0
+		  },
+		  //data
+		  "dataProvider": [{
+		    "date": "2013-01-16",
+		    "count": 71,
+		    "total": 6582
+		  }, {
+		    "date": "2013-01-17",
+		    "count": 74,
+		    "total": 6820.5
+		  }, {
+		    "date": "2013-01-18",
+		    "count": 78,
+		    "total": 7520.25
+		  }, {
+		    "date": "2013-01-19",
+		    "count": 85,
+		    "total": 8500
+		  }, {
+		    "date": "2013-01-20",
+		    "count": 90,
+		    "total": 8546
+		  }, {
+		    "date": "2013-01-21",
+		    "count": 88,
+		    "total": 7586
+		  }, {
+		    "date": "2013-01-22",
+		    "count": 101,
+		    "total": 10538
+		  }, {
+		    "date": "2013-01-23",
+		    "count": 128,
+		    "total": 12505.256
+		  }, {
+		    "date": "2013-01-24",
+		    "count": 122,
+		    "total": 11259.256
+		  }, {
+		    "date": "2013-01-25",
+		    "count": 145,
+		    "total": 13895.753
+		  }, {
+		    "date": "2013-01-26",
+		    "count": 135,
+		    "total": 12537.64
+		  }, {
+		    "date": "2013-01-27",
+		    "count": 129,
+		    "total": 11530.689
+		  }, {
+		    "date": "2013-01-28",
+		    "count": 142,
+		    "total": 13965.952
+		  }, {
+		    "date": "2013-01-29",
+		    "count": 140,
+		    "total": 13568.46
+		  }, {
+		    "date": "2013-01-30",
+		    "count": 135,
+		    "total": 12965.731
+		  }]
+		});
+	</script>	
+	<body>
+		<!-- HTML -->
+		<div id="chartdiv"></div>		
+	</body>
+</html>
