@@ -4,13 +4,6 @@
 		<meta charset="UTF-8">
 		<title></title>
 	</head>
-	<!-- Styles -->
-	<style>
-	#chartdiv {
-	  width: 100%;
-	  height: 500px;
-	}						
-	</style>
 	
 	<!-- Resources -->
 	<script type="text/javascript" src="js/amcharts.js" ></script>
@@ -59,7 +52,7 @@
 		    "valueField": "total",
 		    "clustered": false,
 		    "columnWidth": 0.3,
-		    "legendValueText": "$[[value]]",
+		    "legendValueText": "[[]]",
 		    "balloonText": "[[title]]<br /><b style='font-size: 130%'>$[[value]]</b>",
 		    "precision": 2
 		  }, {//line count
@@ -72,10 +65,12 @@
 		    "hideBulletsCount": 50,
 		    "lineThickness": 2,
 		    "lineColor": "#20acd4",
-		    "type": "smoothedLine",
+//		    "type": "smoothedLine",
+		    "type": "line",
 		    "title": "Count",
 		    "useLineColorForBulletBorder": true,
 		    "valueField": "count",
+		    "legendValueText": "[[]]",
 		    "balloonText": "[[title]]<br /><b style='font-size: 130%'>[[value]]</b>",
 //		    "connect": false
 		  }],
@@ -87,15 +82,16 @@
 		    "minorGridEnabled": true,
 		    "minPeriod":"DD",
 			"equalSpacing": true,
-			"dateFormats":[{period:'fff',format:'JJ:NN:SS'},
-							{period:'ss',format:'JJ:NN:SS'},
-							{period:'mm',format:'JJ:NN'},
-							{period:'hh',format:'JJ:NN'},
-							{period:'DD',format:'MMM DD'},
-							{period:'WW',format:'MMM DD'},
-							{period:'MM',format:'MMM'},
-							{period:'YYYY',format:'YYYY'}],
-		  },		 
+			"dateFormats":
+				[{period:'fff',format:'JJ:NN:SS'},
+				{period:'ss',format:'JJ:NN:SS'},
+				{period:'mm',format:'JJ:NN'},
+				{period:'hh',format:'JJ:NN'},
+				{period:'DD',format:'MMM DD'},
+				{period:'WW',format:'MMM DD'},
+				{period:'MM',format:'MMM YYYY'},
+				{period:'YYYY',format:'YYYY MMM'}],
+			},		 
 		  
 		  //others
 		  "chartCursor": {
@@ -103,9 +99,8 @@
 		    "valueLineEnabled": true,
 		    "valueLineBalloonEnabled": true,
 		    "cursorAlpha": 0,
-		    "valueLineAlpha": 0.2
+		    "valueLineAlpha": 0.2,
 		  },
-
 		  "legend": {
 		    "useGraphSettings": true,
 		    "position": "top"
@@ -153,7 +148,7 @@
 			      type : 'GET',
 			      dataType : "json"
 			    }).done(function(data) {
-					updateChart(data,'DD');
+					updateChart(data,'WW');
 			    }).fail(function(data) {
 			    });
 			})	
@@ -183,11 +178,11 @@
 	</script>	
 	<body>
 		<!-- HTML -->
-		<div id="chartdiv"></div>	
+		<div id="chartdiv" style="width: 100%;height: 500px;"></div>	
 		
-		<button id="btn-range">Date Range</button>
-		<button id="btn-week">Week</button>
-		<button id="btn-month">Month</button>
+		<button id="btn-range">Date Range</button> |
+		<button id="btn-week">Week</button> |
+		<button id="btn-month">Month</button> |
 		<button id="btn-year">Year</button>
 	</body>
 </html>
