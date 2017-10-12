@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/daterangepicker.min.css" />
+
+		<script type="text/javascript" src="js/jquery-2.2.4.min.js" ></script>
+		<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="js/moment.min.js" ></script>
+		<script type="text/javascript" src="js/daterangepicker.min.js" ></script>
+		
+	</head>
+	<body>
+
+		<input type="text" name="daterange" value="01/01/2015 1:30 PM - 01/01/2015 2:00 PM" />
+
+	</body>
+	
+	<script type="text/javascript">
+		$(function() {
+		    $('input[name="daterange"]').daterangepicker({
+		        timePicker: true,
+		        timePickerIncrement: 30,
+		        locale: {
+		            format: 'MM/DD/YYYY h:mm A'
+		        }
+		    });
+		});
+	</script>
+
+</html>
