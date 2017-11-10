@@ -25,4 +25,19 @@
 		// student >> Student {name: "jamie", age: 18, grade: "class one"}
 	</script>
 
+	<script>
+		function go(fn){
+//		    alert("do something");
+		    fn();
+		    fn.call(this);
+		}
+		
+		go(function(){
+//		    alert("success");
+		});		
+		
+		// >> do something
+		// >> do success
+		// >> do success
+	</script>
 </html>
