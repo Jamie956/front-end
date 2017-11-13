@@ -6,23 +6,61 @@
 		<title></title>
 	</head>
 	<script>
-		var arr = [1, 2, 3];
-//		arr.length = 10;
-//		arr.length = 0;
-//		arr.push('6');
-//		arr.push(6);
-//		arr.shift();
-//		arr.unshift(3);
-//		arr.unshift("x","y");
-//		arr.pop();
-//		arr.valueOf();
-		arr.splice(1,2,"x","y");
+		var arr = ['a', 'b', 'c', 'd'];
 		
-		console.log(typeof arr);
-		console.log(arr);
-		console.log(arr.length);
-	</script>
+		Array.isArray(arr);// >> true
+		
+		arr.push('e');// arr >>  ["a", "b", "c", "d", "e"]
+		arr.unshift('x');// arr >> ["x", "a", "b", "c", "d"]	
+		
+		arr.length = 0;// arr >> []
+		arr.shift();// arr >> ["b", "c", "d"]
+		arr.pop();// arr >> ["a", "b", "c"]
+		
+		arr.splice(1,2,"x","y");// arr >> ["a", "x", "y", "d"]
+		arr.reverse();// arr >> ["d", "c", "b", "a"]
 
+		arr.slice(1,3);// >>  ["b", "c"]
+		arr.sort();// >> ["a", "b", "c", "d"]
+		arr.join(" - ");// >> a - b - c - d
+
+		arr.indexOf("b");// >> 1
+		arr.lastIndexOf("c");// >> 2
+		
+		arr.toString();// >> a,b,c,d
+	</script>
+	
+	<script>
+			var arr1 = ["a","b","c"];
+			var arr2 = ["1","2","3"];
+			arr1.concat(arr2);// >> ["a", "b", "c", "1", "2", "3"]
+	</script>
+	
+	<script>
+		var weekofday = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+		
+		var openinghour = {
+			monday:[{start:'700',end:'1200'},{start:'1300',end:'1500'}],
+			wednesday:[{start:'1700',end:'2000'}]
+		};
+		
+		for(index in weekofday){
+			if(openinghour[weekofday[index]]){
+				for(index_time in openinghour[weekofday[index]]){
+					var _start = openinghour[weekofday[index]][index_time]['start'];
+					var _end = openinghour[weekofday[index]][index_time]['end'];		
+				}
+			}
+		}		
+	</script>
+	
+	<script>
+		var arr = [6, 1, 3, 5, 4, 8, 2, 9];
+		arr.sort(function(num1, num2) {
+			return num2 - num1;
+		});
+	</script>
+	
 	<body>
 	</body>
 

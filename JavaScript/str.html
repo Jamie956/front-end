@@ -9,89 +9,26 @@
 		$(function(){
 			var str = "hello world";
 			
-			var str_constructor = str.constructor;
-			console.log("str_constructor-->>"+str_constructor);
-			
-			var str_length = str.length;
-			console.log("str_length-->>"+str_length);
-			
-			var str_charAt = str.charAt(0);
-			console.log("str_charAt-->>"+str_charAt);
-			
-			var str_charCodeAt = str.charCodeAt(1);
-			console.log("str_charCodeAt-->>"+str_charCodeAt);
-			
-			var str_concat = str.concat(' awesome!');
-			console.log("str_concat-->>"+str_concat);
-			
-			var str_endsWith = str.endsWith('world');
-			console.log('str_endsWith-->>'+str_endsWith);
-			
-			var str_fromCharCode = String.fromCharCode(104);
-			console.log('str_fromCharCode-->>'+str_fromCharCode);
-			
-			var str_includes = str.includes('wo');
-			console.log("str_includes-->>"+str_includes)
-			
-			var str_indexOf = str.indexOf("d");
-			console.log("str_indexOf-->>"+str_indexOf);
-			
-			var str_lastIndexOf = str.lastIndexOf("o");
-			console.log("str_lastIndexOf-->>"+str_lastIndexOf);
-			
-			var str_localeCompare = str.localeCompare("e");
-			console.log("str_localeCompare-->>"+str_localeCompare);
-			
-			var reg = "/o/g";
-			var str_match = str.match(reg);
-			console.log("str_match-->>"+str_match);
-			
-			var str_repeat = str.repeat(3);
-			console.log("str_repeat-->>"+str_repeat);
-			
-			var str_replace = str.replace("world","google");
-			console.log("str_replace-->>"+str_replace);
-			
-			var str_search = str.search("wo");
-			console.log("str_search-->>"+str_search);
-			
-			var str_slice = str.slice(1, 3);
-			console.log("str_slice-->>"+str_slice);
-			
-			var str_split = str.split(" ");
-			console.log("str_split-->>"+str_split);
-			
-			var str_startsWith = str.startsWith("hello");
-			console.log("str_startsWith-->>"+str_startsWith);
-			
-			var str_substr = str.substr(1, 3);
-			console.log("str_substr-->>"+str_substr);
-			
-			var str_substring = str.substring(1, 3);
-			console.log("str_substring-->>"+str_substring);
-			
-			var str_toLocaleLowerCase = "HELLO WORLD".toLocaleLowerCase();
-			console.log("str_toLocaleLowerCase-->>"+str_toLocaleLowerCase);
-			
-			var str_toLocaleUpperCase = str.toLocaleUpperCase();
-			console.log("str_toLocaleUpperCase-->>"+str_toLocaleUpperCase);
-			
-			var str_toLowerCase = "HELLO WORLD".toLowerCase();
-			console.log("str_toLowerCase-->>"+str_toLowerCase);
-			
-			var str_toUpperCase = str.toUpperCase();
-			console.log("str_toUpperCase-->>"+str_toUpperCase);
-			
-			var str_toString = str.toString();
-			console.log("str_toString-->>"+str_toString);
-			
-			var str_trim = "  hello world  ".trim();
-			console.log("str_trim-->>"+str_trim);
-			
-			var num = 123456;
-			console.log("num-->>"+typeof num);
-			var str_valueOf = str.valueOf(num);
-			console.log("str_valueOf-->>"+typeof str_valueOf);
+			str.length;// >> 11
+			str.charAt(0);// >> h
+			str.charCodeAt(1);// >> 101
+			String.fromCharCode(101);// >> e
+			str.concat(' plus!');// >> hello world plus!
+			str.endsWith('world');// >> true
+			str.includes('wo');// >> true
+			str.indexOf("d");//>>10
+			str.lastIndexOf("o");//>>7
+			str.repeat(3);//>>hello worldhello worldhello world
+			str.replace("world","google");//>>hello google
+			str.search("wo");//>>6
+			str.slice(1, 3);//>>el
+			str.split(" ");//>>hello,world
+			str.startsWith("hello");//>>true
+			str.substr(1, 3);//>>ell
+			str.substring(1, 3);//>>el
+			"HELLO WORLD".toLowerCase();//>>hello world
+			str.toUpperCase();//>>HELLO WORLD
+			"  hello world  ".trim();//>>hello world
 		});
 	</script>
 	<body>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="text" id="text1" />
+	</body>
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	
+	<script>
+		$('#text1').keyup(function(e){
+//			console.log(e);
+			$("#text1").css("background-color", "pink");
+		});
+		$('#text1').keydown(function(e){
+//			console.log(e);
+			$("#text1").css("background-color", "yellow");
+			
+			console.log(e.keyCode);
+			if(e.keyCode != 8 && (e.keyCode < 96 || e.keyCode > 105)) {
+				return false;
+			}			
+		});		
+	</script>
+	
+</html>

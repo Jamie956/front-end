@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="text" id="text1" size="20px" />
+	</body>
+	
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	
+	<script>
+		$("#text1").focus(function(){
+			console.log('focus');
+		});
+		
+		$('#text1').blur(function(){
+			console.log('blur');
+		});
+		
+		$('#text1').change(function(){
+			console.log('change');
+		});
+	</script>
+	
+</html>

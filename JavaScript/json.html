@@ -4,21 +4,63 @@
 		<meta charset="UTF-8">
 		<title></title>
 	</head>
-	<script>
-		var json={a:12,b:23,c:'abc',d:'+-*/',e:'5'};
-		alert(typeof json);//object
-		alert(json.d);//+-*/
-		alert(json.a + json.b);//35
-		alert(json.a + json.e);//125
-		
-		var json1={name:{firstName:'zhang',lastName:'san'},age:23};
-		alert(json1.age);//23
-		alert(json1.name.firstName);//zhang
-		
-		for(var i in json){//foreach
-			alert(json[i]);//12 23 abc +-*/ 5
-		}
-	</script>
+
 	<body>
 	</body>
+	
+	<script>
+		var myjson = {a:12,b:23,c:'abc',d:'+-*/',e:'5'};
+//		console.log(myjson.c); // >> abc
+		var myjson2={name:{firstName:'niu',lastName:'bi'},age:23};
+//		console.log(myjson2.name.firstName);// >> niu
+	</script>
+	
+	<script>
+		var myjson = {a:12,b:23,c:'abc',d:'+-*/',e:'5'};
+		for(i in myjson){
+//			console.log(myjson[i]);// >> 12 23 abc +-*/ 5
+		}
+	</script>
+	
+	<script>
+		var myjson2={name:{firstName:'niu',lastName:'bi'},age:23};
+		for(i in myjson2){
+//			console.log(myjson2[i]);
+			for(j in myjson2[i]){
+//				console.log(myjson2[i][j]);
+			}
+		}		
+	</script>
+	
+	<script>
+		//string to json
+		JSON.parse('{ "name": "tomcat", "sex": "man" }');
+		//json to string
+		JSON.stringify({name:'tomcat',pwd:'123456'});
+	</script>
+	
+	<script>
+		//json add key-value
+		var myjson = {table1: "111",table2: "222",table3: "333"};
+		myjson['table4'] = '444' ;
+	</script>
+	
+	<script>
+		var myjson = {data:
+			{sCol:{table1: "111",table2: "222",table3: "333"}}
+		};
+		myjson.data.sCol['table4'] = '444' ;
+	</script>
+	
+	<script>
+		//json update value
+		var myjson = {table1: "111",table2: "222",table3: "333"};
+		myjson['table3'] = 'new' ;
+	</script>
+	
+	<script>
+		//json delete
+		var myjson = {table1: "111",table2: "222",table3: "333"};
+		delete myjson['table3'];
+	</script>
 </html>
