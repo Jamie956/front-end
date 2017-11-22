@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	
+	<script>
+		let [a, b, c] = [1, 2, 3];
+		a// 1
+		b// 2
+		c// 3
+		
+		let [d, [ [e], f] ] = [1, [ [2], 3] ];
+		d // 1
+		e // 2
+		f // 3
+		
+		let [ , , g] = ["foo", "bar", "baz"];
+		g // "baz"
+		
+		let [h, , i] = [1, 2, 3];
+		h // 1
+		i // 3
+		
+		let [j, ...k] = [1, 2, 3, 4];
+		j // 1k
+		k // [2, 3, 4]
+		
+		let [l, m, ...n] = ['a'];
+		l // "a"
+		m // undefined
+		n // []		
+		
+		function* fibs() {
+		  let a = 0;
+		  let b = 1;
+		  while (true) {
+		    yield a;
+		    [a, b] = [b, a + b];
+//		    0 1
+//		    1 1
+//		    1 2
+//		    2 3
+//		    3 5
+//		    5 8
+//		    8 13
+//		    13 21
+		  }
+		}
+		
+		let [o, p, q, r, s, t, u, v] = fibs();
+		o// 0
+		u// 8
+		
+		let { w, x } = { w: "aaa", x: "bbb" };
+		w // "aaa"
+		x // "bbb"
+		
+		let aa = {bb:['Hello',{dd:'World'}]};
+		let { bb: [cc, { dd }] } = aa;
+		cc // "Hello"
+		dd // "World"
+		
+		const node = {
+		  loc: {
+		    start: {
+		      line: 1,
+		      column: 5
+		    }
+		  }
+		};
+		let { loc, loc: { start }, loc: { start: { line }} } = node;
+		line // 1
+		loc  // Object {start: Object}
+		start // Object {line: 1, column: 5}	
+		
+		let ee = [1, 2, 3];
+		let {0 : ff, [ee.length - 1] : gg} = ee;
+		ff // 1
+		gg // 3
+		
+		const [hh, ii, jj] = 'hello';
+		hh//h
+		ii//e
+		jj//l
+		
+		let {length : len} = 'hello';
+		len // 5
+		
+		function f1() {
+		  return [1, 2, 3];
+		}
+		let [kk, ll, mm] = f1();
+		
+		function f2() {
+		  return {
+		    nn: 1,
+		    oo: 2
+		  };
+		}
+		let { nn, oo } = f2();
+		
+		let jsonData = {
+		  id: 42,
+		  status: "OK",
+		  data: [867, 5309]
+		};
+		let { id, status, data: number } = jsonData;
+		id//42
+		status//OK
+		number//[867, 5309]
+		
+		const map = new Map();
+		map.set('pp', 'hello');
+		map.set('qq', 'world');
+		for (let [key, value] of map) {
+//		  console.log(key + " *> " + value);
+		}		
+	</script>
+</html>

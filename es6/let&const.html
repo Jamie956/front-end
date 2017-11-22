@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+
+	</body>
+	
+	<script>
+		{
+			let a = 10;
+			var b = 1;
+
+//			a// 10
+//			b// 1
+		};
+//		a// not defined
+//		b// 1
+	</script>
+	
+	<script>
+		var arr1 = [];
+		for (var i = 0; i < 10; i++) {
+		  arr1[i] = function () {
+		    console.log(i);
+		  };
+		}
+//		arr1[6](); // 10
+		
+		var arr2 = [];
+		for (let i = 0; i < 10; i++) {
+		  arr2[i] = function () {
+		    console.log(i);
+		  };
+		}
+//		arr2[6](); // 6		
+	</script>
+	
+	<script>
+		for (let i = 0; i < 3; i++) {
+			let i = 'abc';
+//			console.log(i);// abc abc abc
+		}
+		
+		for (var i = 0; i < 3; i++) {
+			  var i = 'abc';
+//			  console.log(i);// abc
+		}
+	</script>
+	
+	<script>
+//		var tmp = new Date();
+//		function f() {
+//		  console.log(tmp);
+//		  if (false) {
+//		    var tmp = 'hello world';
+//		  }
+//		}
+//		
+//		f(); // undefined		
+
+		let tmp = new Date();
+		function f() {
+		  console.log(tmp);
+		  if (true) {
+		    let tmp = 'hello world';
+		    console.log(tmp);
+		  }
+		}
+		
+//		f();
+	</script>
+	
+	<script>
+		function f1() {
+		  let n = 5;
+		  if (true) {
+		    let n = 10;
+		  }
+		  console.log(n); // 5
+		}
+//		f1();
+		
+		function f2() {
+		  var n = 5;
+		  if (true) {
+		    var n = 10;
+		  }
+		  console.log(n); // 10
+		}
+//		f2();		
+	</script>
+	
+	<script>
+		{
+		  let a2 = 'secret';
+		  let f3 = function () {
+		    console.log("a");
+		  };
+//		  f3();
+		}	
+	</script>
+	
+	<script>
+		const PI = 3.1415;
+//		console.log(PI);// 3.1415
+//		PI = 3;// error	
+	</script>
+	
+	<script>
+		const foo = {};
+		foo.prop = 123;
+//		console.log(foo.prop);// 123
+		
+//		foo = {};// error
+	</script>
+	
+</html>
