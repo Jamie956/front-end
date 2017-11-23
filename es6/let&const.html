@@ -14,15 +14,10 @@
 		{
 			let a = 10;
 			var b = 1;
-
 //			a// 10
-//			b// 1
 		};
 //		a// not defined
-//		b// 1
-	</script>
-	
-	<script>
+
 		var arr1 = [];
 		for (var i = 0; i < 10; i++) {
 		  arr1[i] = function () {
@@ -38,9 +33,7 @@
 		  };
 		}
 //		arr2[6](); // 6		
-	</script>
-	
-	<script>
+
 		for (let i = 0; i < 3; i++) {
 			let i = 'abc';
 //			console.log(i);// abc abc abc
@@ -50,73 +43,59 @@
 			  var i = 'abc';
 //			  console.log(i);// abc
 		}
-	</script>
-	
-	<script>
-//		var tmp = new Date();
-//		function f() {
-//		  console.log(tmp);
-//		  if (false) {
-//		    var tmp = 'hello world';
-//		  }
-//		}
-//		
-//		f(); // undefined		
-
-		let tmp = new Date();
-		function f() {
-		  console.log(tmp);
-		  if (true) {
-		    let tmp = 'hello world';
-		    console.log(tmp);
+		
+		var tmp1 = new Date();
+		function f1() {
+		  console.log(tmp1);
+		  if (false) {
+		    var tmp1 = 'hello world';
 		  }
 		}
+//		f1(); // undefined		
+
+		let tmp2 = new Date();
+		function f2() {
+		  console.log(tmp2);
+		  if (true) {
+		    let tmp2 = 'hello world';
+		  }
+		}
+//		f2();//Thu Nov 23 2017 09:58:13 GMT+0800 (中国标准时间)
 		
-//		f();
-	</script>
-	
-	<script>
-		function f1() {
+		function f3() {
 		  let n = 5;
 		  if (true) {
 		    let n = 10;
 		  }
-		  console.log(n); // 5
+		  console.log(n);
 		}
-//		f1();
+//		f3();// 5
 		
-		function f2() {
+		function f3() {
 		  var n = 5;
 		  if (true) {
 		    var n = 10;
 		  }
-		  console.log(n); // 10
+		  console.log(n); 
 		}
-//		f2();		
-	</script>
-	
-	<script>
-		{
-		  let a2 = 'secret';
-		  let f3 = function () {
-		    console.log("a");
-		  };
-//		  f3();
-		}	
-	</script>
-	
-	<script>
-		const PI = 3.1415;
-//		console.log(PI);// 3.1415
-//		PI = 3;// error	
-	</script>
-	
-	<script>
-		const foo = {};
-		foo.prop = 123;
-//		console.log(foo.prop);// 123
+//		f4();// 10		
 		
-//		foo = {};// error
+		{
+		  let c = 'secret';
+		  let f5 = function () {
+		    console.log("hello world");
+		  };
+//		  f5();
+		}	
+		
+		const PI = 3.1415;
+		PI// 3.1415
+//		PI = 3;// error	
+
+		const d = {};
+		d.prop = 123;
+		d.prop// 123
+//		d = {};// error
 	</script>
 	
 </html>

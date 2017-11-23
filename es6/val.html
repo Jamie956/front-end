@@ -59,20 +59,13 @@
 		w // "aaa"
 		x // "bbb"
 		
-		let aa = {bb:['Hello',{dd:'World'}]};
+		let aa = { bb: ['Hello',{ dd: 'World' }] };
 		let { bb: [cc, { dd }] } = aa;
 		cc // "Hello"
 		dd // "World"
 		
-		const node = {
-		  loc: {
-		    start: {
-		      line: 1,
-		      column: 5
-		    }
-		  }
-		};
-		let { loc, loc: { start }, loc: { start: { line }} } = node;
+		const node = { loc: { start: { line: 1, column: 5 } } };
+		let { loc, loc: { start }, loc: { start: { line } } } = node;
 		line // 1
 		loc  // Object {start: Object}
 		start // Object {line: 1, column: 5}	
@@ -117,7 +110,7 @@
 		map.set('pp', 'hello');
 		map.set('qq', 'world');
 		for (let [key, value] of map) {
-//		  console.log(key + " *> " + value);
+//		  console.log(key + " -> " + value);
 		}		
 	</script>
 </html>
