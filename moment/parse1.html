@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+</head>
+<body>
+  
+</body>
+<script type="text/javascript">
+  var a = moment().format('MMMM Do YYYY, h:mm:ss a');
+  var b = moment().format('dddd');
+  var c = moment().format("MMM Do YY");
+  var d = moment().format('YYYY [escaped] YYYY');
+  var e =  moment().format();  
+
+  a// November 27th 2017, 11:13:37 am"
+  b// Monday
+  c// Nov 27th 17
+  d// 2017 escaped 2017
+  e// 2017-11-27T11:15:37+08:00
+
+  var f = moment("20111031", "YYYYMMDD").fromNow();
+  var g = moment("20120620", "YYYYMMDD").fromNow();
+  var h = moment().startOf('day').fromNow();
+  var i = moment().endOf('day').fromNow();
+  var j = moment().startOf('hour').fromNow();  
+
+  f// 6 years ago
+  g// 5 years ago
+  h// 11 hours ago
+  i// in 13 hours
+  j// 20 minutes ago  
+
+  var k = moment().subtract(10, 'days').calendar();
+  var l = moment().subtract(6, 'days').calendar();
+  var m = moment().subtract(3, 'days').calendar();
+  var n = moment().subtract(1, 'days').calendar();
+  var o = moment().calendar();
+  var p = moment().add(1, 'days').calendar();
+  var q = moment().add(3, 'days').calendar();
+  var r = moment().add(10, 'days').calendar();
+
+  k// 11/17/2017
+  l// Last Tuesday at 11:22 AM
+  m// Last Friday at 11:22 AM
+  n// Yesterday at 11:22 AM
+  o// Today at 11:22 AM
+  p// Tomorrow at 11:22 AM
+  q// Thursday at 11:22 AM
+  r// 12/07/2017
+  
+  var s = moment.locale();
+  var t = moment().format('LT');
+  var u = moment().format('LTS');
+  var v = moment().format('L');
+  var w = moment().format('l');
+  var x = moment().format('LL');
+  var y = moment().format('ll');
+  var z = moment().format('LLL');
+  var _a = moment().format('lll');
+  var _b = moment().format('LLLL');
+  var _c = moment().format('llll');
+
+  s // en
+  t // 11:27 AM
+  u // 11:27:18 AM
+  v // 11/27/2017
+  w // 11/27/2017
+  x // November 27, 2017
+  y // Nov 27, 2017
+  z // November 27, 2017 11:27 AM
+  _a// Nov 27, 2017 11:27 AM
+  _b// Monday, November 27, 2017 11:27 AM
+  _c// Mon, Nov 27, 2017 11:27 AM
+
+
+</script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+</head>
+<body>
+  
+</body>
+<script type="text/javascript">
+  // H => 0-23
+  var a = moment('0:00', "H:mm").format("Hmm");
+  var b = moment('0:01', "H:mm").format("Hmm");
+  var c = moment('12:00', "H:mm").format("Hmm");
+  var d = moment('23:59', "H:mm").format("Hmm");
+  var e = moment('24:00', "H:mm").format("Hmm");
+
+  a// 000
+  b// 001
+  c// 1200
+  d// 2359
+  e// 000
+
+  // k => 1-24
+  var f = moment('0:00', "k:mm").format("kmm");
+  var g = moment('0:01', "k:mm").format("kmm");
+  var h = moment('1:01', "k:mm").format("kmm");
+  var i = moment('12:00', "k:mm").format("kmm");
+  var j = moment('23:59', "k:mm").format("kmm");
+  var k = moment('24:00', "k:mm").format("kmm");
+
+  f// 2400
+  g// 2401
+  h// 101
+  i// 1200
+  j// 2359
+  k// 2400
+
+  // h => 1-12
+  var l = moment('0:00', "h:mm").format("hmm");
+  var m = moment('1:01', "h:mm").format("hmm");
+  var n = moment('11:59', "h:mm").format("hmm");
+  var o = moment('12:00', "h:mm").format("hmm");
+
+  l// 1200
+  m// 101
+  n// 1159
+  o// 1200
+
+  var p = moment();
+  var q = moment([]);
+  var r = moment({});
+  var s = moment("12-25-1995", "MM-DD-YYYY");
+  var t = moment("1995-12-25");
+  var u = moment("not a real date").isValid();
+  var v = moment().isValid();
+
+  p// now
+  q// now
+  r// now
+  s// 
+  t// 
+  u// false
+  v// true
+
+  var w = moment("2010-10-20 4:30","YYYY-MM-DD HH:mm");
+  var x = moment("2010 11 31","YYYY MM DD").isValid(); 
+  var y = moment("1234", "hmm").format("HH:mm");
+  var z = moment(1318781876406);
+  var _a = moment.unix(1318781876); 
+
+  w// Wed Oct 20 2010 04:30:00 GMT+0800
+  x// false
+  y// 12:34
+  z// Mon Oct 17 2011 00:17:56 GMT+0800
+  _a// Mon Oct 17 2011 00:17:56 GMT+0800
+
+  var _b = moment().hours();
+  var _c = moment().local();
+  var _d = moment().valueOf();
+  var _e = moment().format('YYYY-MM');
+
+  _b// 15
+  _c// Mon Nov 27 2017 15:25:15 GMT+0800
+  _d// 1511767515925
+  _e// 2017-11
+
+</script>
+</html>
