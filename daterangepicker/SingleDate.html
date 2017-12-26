@@ -13,21 +13,17 @@
 </head>
 
 <body>
-    <input type="text" name="daterange" style="width: 330px" />
+    <input type="text" name="birthdate" value="10/24/1984" />
 </body>
 <script type="text/javascript">
 $(function() {
-    $('input[name="daterange"]').daterangepicker(
+    $('input[name="birthdate"]').daterangepicker(
       {
-        timePicker: true,
-        timePickerIncrement: 30,
-        locale: {
-            format: 'MM/DD/YYYY h:mm A'
-        }
+          singleDatePicker: true,
+          showDropdowns: true
       },
-      function(start, end) {
-        alert(start);
-        alert(end);
+      function(date) {
+          alert(date);
       }
     );
 });
