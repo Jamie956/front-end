@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/materialize.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<style type="text/css">
+.hiccup-content {
+    height: 100px;
+
+    overflow: hidden;
+}
+
+.hiccup-item:hover {
+    background-color: #F2F2F2;
+}
+
+.hiccup-item img {
+    height: 100px;
+    width: 100px;
+
+    float: left;
+}
+
+.hiccup-item {
+    padding: 5px;
+    border-radius: 7px;
+}
+
+.hiccup-operation {
+    text-align: right;
+}
+</style>
+
+<body>
+    <div class="container hiccup-container">
+        <div class="row card-panel hiccup-item">
+            <img src="#">
+            <div class="col s10">
+                <div class="col s8 hiccup-content">
+                    <h5>title</h5>
+                    <h6>description</h6>
+                    <em>Max value: $10</em>
+                </div>
+                <div class="col s2 hiccup-operation">
+                    <a class="edit-item" href="javascript:void(0)" title="Edit"><i class="material-icons">mode_edit</i></a>
+                    <a class="delete-item" href="javascript:void(0)" title="Remove"><i class="material-icons">delete</i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.js"></script>
+</body>
+
+</html>
