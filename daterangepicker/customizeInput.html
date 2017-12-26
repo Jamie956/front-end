@@ -13,15 +13,17 @@
 </head>
 
 <body>
-    <input type="text" name="daterange" value="01/01/2015 - 01/31/2015" />
+    <input type="text" name="daterange"/>
 </body>
 <script>
 $(function() {
 
     $('input[name="daterange"]').daterangepicker({
         autoUpdateInput: false
-    }, function(date) {
-      alert(date);
+    }, function(start, end) {
+      alert(start);
+      alert(end);
+      $('input[name="daterange"]').val(start.format('MM/DD/YYYY')+ ' - ' +end.format('MM/DD/YYYY'));
     });
 });
 </script>
