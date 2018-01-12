@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var person = function () {
+            this.name = '';
+            this.sex = '';
+        };
+
+        person.prototype.setPerson = function (p) {
+            this.name = p.name;
+            this.sex = p.sex;
+        };
+        person.prototype.getPerson = function () {
+            return this.name +'==='+ this.sex;
+        };
+
+        var p = new person();
+        p.setPerson({name: "tomcat", sex: "1"});
+        alert(p.getPerson());
+
+    </script>
+</body>
+
+</html>
