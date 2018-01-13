@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var personProto = function (){
+            
+        };
+        personProto.prototype.name = 'no name';
+        personProto.prototype.age = 0;
+        personProto.prototype.city = 'no city';
+        
+        personProto.prototype.printPerson = function(){
+            console.log(this.name +', '+ this.age +', '+ this.city);
+        };
+
+        var person1 = new personProto();
+        person1.name = 'tomcat';
+        person1.age = 23
+        person1.city = 'GZ';
+        
+        console.log('name' in person1);
+        console.log(person1.hasOwnProperty('name'));
+
+        person1.printPerson();
+        console.dir(personProto);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var personFactory = function (name, age) {
+            var temp = {};
+
+            temp.name = name;
+            temp.age = age;
+
+            temp.printPerson = function () {
+                console.log(this.name + ', ' + this.age);
+            }
+
+            return temp;
+        }
+
+        var person1 = personFactory('tomcat', '18');
+        var person2 = personFactory('hotdag', '80');
+        
+        person1.printPerson();
+        person2.printPerson();
+        
+    </script>
+</body>
+
+</html>
