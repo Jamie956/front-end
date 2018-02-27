@@ -1,0 +1,21 @@
+{
+  "name": "_bower",
+  "homepage": "https://github.com/Jamie956/test",
+  "authors": [
+    "jamie <752492509@qq.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "bootstrap": "^4.0.0"
+  }
+}
