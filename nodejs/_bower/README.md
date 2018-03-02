@@ -1,2 +1,0 @@
-===exec===
-$ bower install
