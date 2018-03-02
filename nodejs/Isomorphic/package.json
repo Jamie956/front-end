@@ -4,7 +4,8 @@
   "scripts": {
     "build:browser": "webpack",
     "build:server": "webpack --config webpack_server.config.js",
-    "http_server": "node ./http_server.js"
+    "build": "npm run build:browser && npm run build:server",
+    "start": "node ./src/server/server.js"
   },
   "dependencies": {
     "express": "^4.15.4",
