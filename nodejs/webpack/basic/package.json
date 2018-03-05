@@ -4,6 +4,7 @@
 	"description": "",
 	"main": "main.js",
 	"scripts": {
+		"start": "webpack",
 		"watch": "webpack --watch",
 		"json": "webpack --json > stats.json"
 	},
