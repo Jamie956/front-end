@@ -4,11 +4,12 @@
 	"description": "",
 	"main": "main.js",
 	"scripts": {
-		"watch": "webpack --watch"
+		"build": "webpack"
 	},
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"uglifyjs-webpack-plugin": "^1.2.2",
 		"webpack": "^3.4.0"
 	}
 }
