@@ -1,0 +1,17 @@
+{
+	"name": "sad",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"start": "webpack",
+		"watch": "webpack --watch",
+		"json": "webpack --json > stats.json"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"clean-webpack-plugin": "^0.1.18",
+		"webpack": "^3.4.0"
+	}
+}
