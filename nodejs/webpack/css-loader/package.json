@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "watch": "webpack --watch"
+    "start": "webpack --watch"
   },
   "author": "",
   "license": "ISC",
