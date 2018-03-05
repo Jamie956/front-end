@@ -10,7 +10,7 @@ module.exports = {
   },
   output: {
     filename: '[name]_[chunkhash:8].js',
-    path: path.resolve(__dirname, './build'),
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [{
@@ -22,7 +22,7 @@ module.exports = {
         test: /\.css/,
         use: ExtractTextPlugin.extract({
           use: ['css-loader?minimize']
-        }),
+        })
       },
     ]
   },
