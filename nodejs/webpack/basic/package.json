@@ -4,7 +4,8 @@
 	"description": "",
 	"main": "main.js",
 	"scripts": {
-		"watch": "webpack --watch"
+		"watch": "webpack --watch",
+		"json": "webpack --json > stats.json"
 	},
 	"author": "",
 	"license": "ISC",
