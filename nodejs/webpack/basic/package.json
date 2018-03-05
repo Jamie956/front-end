@@ -5,8 +5,7 @@
 	"main": "main.js",
 	"scripts": {
 		"build": "webpack",
-		"watch": "webpack --watch",
-		"json": "webpack --json > stats.json"
+		"watch": "webpack --watch"
 	},
 	"author": "",
 	"license": "ISC",
