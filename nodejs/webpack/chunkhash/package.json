@@ -1,0 +1,15 @@
+{
+	"name": "sad",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"build": "webpack",
+		"watch": "webpack --watch"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"webpack": "^3.4.0"
+	}
+}
