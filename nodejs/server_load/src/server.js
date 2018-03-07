@@ -1,6 +1,10 @@
 const express = require('express');
-const { render } = require('../../build/bundle_server');
 const app = express();
+
+const path = require('path');
+const { render } = require(path.resolve('dist/bundle.server'));
+
+app.use(express.static('.'));
 
 app.get('/', function (req, res) {
   res.send(`
@@ -10,14 +14,10 @@ app.get('/', function (req, res) {
     </head>
     <body>
     <div id="app">${render()}</div>
-    <script src="./build/bundle_client.js"></script>
+    <script src="./dist/bundle.client.js"></script>
     </body>
     </html>
   `);
 });
 
-app.use(express.static('.'));
-
-app.listen(3000, function () {
-  console.log('app listening on port 3000!')
-});
+app.listen(3000, () => {console.log('Listening on port 3000!')});

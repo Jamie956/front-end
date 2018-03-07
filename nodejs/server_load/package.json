@@ -2,10 +2,10 @@
   "name": "dive-into-webpack",
   "version": "1.0.0",
   "scripts": {
-    "build:browser": "webpack",
-    "build:server": "webpack --config webpack_server.config.js",
-    "build": "npm run build:browser && npm run build:server",
-    "start": "node ./src/server/server.js"
+    "build:client": "webpack --config webpack.client.js",
+    "build:server": "webpack --config webpack.server.js",
+    "build": "npm run build:client && npm run build:server",
+    "start": "node ./src/server.js"
   },
   "dependencies": {
     "express": "^4.15.4",
