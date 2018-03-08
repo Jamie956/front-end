@@ -35,7 +35,7 @@ const reducers = combineReducers({
 const store = createStore(reducers)
 
 store.subscribe(() => {
-    console.log("store changed", store.getState());
+    console.log(store.getState());
 })
 
 store.dispatch({type: "", payload: "1"})
