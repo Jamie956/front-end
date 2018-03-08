@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname, "src"),
-  entry: "./layout.js",
+  entry: "./main.js",
   module: {
     loaders: [{
       test: /\.jsx?$/,
@@ -25,6 +25,6 @@ module.exports = {
   ],
   output: {
     path: __dirname + "/dist",
-    filename: "layout.min.js"
+    filename: "main.js"
   }
 };
