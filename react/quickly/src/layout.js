@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 class Layout extends React.Component {
-	//demo2 ==============================
+	//demo1 ==============================
 	render(){
 		const name = "Papo";
 		return (
@@ -10,7 +10,7 @@ class Layout extends React.Component {
 		);
 	}
 
-	//demo3 ==============================
+	//demo2 ==============================
 	// getVal(){
 	// 	return "Pipi";
 	// }
@@ -21,7 +21,7 @@ class Layout extends React.Component {
 	// 	);
 	// }
 
-	//demo4 ==============================
+	//demo3 ==============================
 	// constructor() {
 	// 	super();
 	// 	this.name = "Fihi";
