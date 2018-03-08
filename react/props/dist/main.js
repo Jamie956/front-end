@@ -19799,21 +19799,6 @@
 
 		_createClass(Layout, [{
 			key: "render",
-
-			//state ==================================
-			// constructor(){
-			// 	super();
-			// 	this.state = {name: "Alo"};
-			// }
-			// render(){
-			// 	return (
-			// 		<div>
-			// 			{this.state.name}
-			// 		</div>
-			// 	);
-			// }
-
-			//props ==================================
 			value: function render() {
 				var guest = 'Hello World.';
 				var again = 'Hello World Again.';

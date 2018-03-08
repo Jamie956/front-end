@@ -25,6 +25,6 @@ module.exports = {
   ],
   output: {
     path: __dirname + "/dist",
-    filename: "layout.min.js"
+    filename: "main.js"
   }
 };
