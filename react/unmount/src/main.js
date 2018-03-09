@@ -5,7 +5,12 @@ class Layout extends React.Component {
 	componentWillMount() {
 		console.log('componentWillMount');
   }
-
+	//Call it, when component inserted to the DOM
+	componentDidMount() {
+		console.log('Did...');
+	}
+	
+	//Call it, when component is removed from the DOM
   componentWillUnmount() {
 		console.log('componentWillUnmount');
 	}
@@ -23,6 +28,6 @@ setTimeout(() => {
 
 setTimeout(() => {
 	ReactDOM.render(<Layout /> , document.getElementById('app'));
-}, 5000);
+}, 6000);
 
 ReactDOM.render(<Layout /> , document.getElementById('app'));
