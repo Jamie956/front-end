@@ -4,18 +4,18 @@ var bodyParser = require('body-parser');
 
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 
-app.get('/index.html', function(req, res){
+app.get('/index.html', (req, res) => {
     res.sendFile( __dirname + "/" + "index.html" );
 });
 
-app.post('/login', urlencodedParser, function(req, res){
-    var response = {
+app.post('/login', urlencodedParser, (req, res) => {
+    var formdata = {
         'name': req.body.name,
         'password': req.body.password
     };
-    res.end(JSON.stringify(response));
+    res.end(JSON.stringify(formdata));
 });
 
-var server = app.listen(3000, function(){
+app.listen(3000, () => {
     console.log('listen on port: 3000');
 });
