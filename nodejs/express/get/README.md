@@ -1,4 +1,4 @@
 npm i
-npm run start
+node main
 
 http://localhost:3000/index.html
