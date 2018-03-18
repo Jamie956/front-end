@@ -1,11 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/main.js',
-  output: {
-    filename: 'bundle.client.js',
-    path: path.resolve(__dirname, 'dist')
-  },
+  entry: './src/client/index.js',
   module: {
     rules: [{
         test: /\.js$/,
@@ -23,5 +19,9 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       }
     ]
-  }
+  },
+  output: {
+    filename: 'bundle.client.js',
+    path: path.resolve(__dirname, 'dist')
+  }  
 };

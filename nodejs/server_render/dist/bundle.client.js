@@ -9606,11 +9606,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(98);
 
-var _HelloCompo = __webpack_require__(184);
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _greet = __webpack_require__(184);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _reactDom.render)(_react2.default.createElement(_HelloCompo.HelloCompo, null), window.document.getElementById('app'));
+_reactDom2.default.render(_react2.default.createElement(_greet.Greet, null), window.document.getElementById('app'));
 
 /***/ }),
 /* 83 */
@@ -22141,7 +22143,7 @@ module.exports = ReactDOMInvalidARIAHook;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.HelloCompo = undefined;
+exports.Greet = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -22159,27 +22161,27 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var HelloCompo = exports.HelloCompo = function (_React$Component) {
-  _inherits(HelloCompo, _React$Component);
+var Greet = exports.Greet = function (_React$Component) {
+  _inherits(Greet, _React$Component);
 
-  function HelloCompo() {
-    _classCallCheck(this, HelloCompo);
+  function Greet() {
+    _classCallCheck(this, Greet);
 
-    return _possibleConstructorReturn(this, (HelloCompo.__proto__ || Object.getPrototypeOf(HelloCompo)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Greet.__proto__ || Object.getPrototypeOf(Greet)).apply(this, arguments));
   }
 
-  _createClass(HelloCompo, [{
+  _createClass(Greet, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'h1',
         null,
-        'Hello'
+        'Hello World.'
       );
     }
   }]);
 
-  return HelloCompo;
+  return Greet;
 }(_react2.default.Component);
 
 /***/ }),
@@ -22203,8 +22205,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js!./style.css", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js!./style.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./style.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./style.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -22222,7 +22224,7 @@ exports = module.exports = __webpack_require__(187)(false);
 
 
 // module
-exports.push([module.i, "h1 {\n  color: red;\n}\n", ""]);
+exports.push([module.i, "h1 {\r\n  color: red;\r\n}", ""]);
 
 // exports
 

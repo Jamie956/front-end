@@ -8894,24 +8894,19 @@ module.exports = getActiveElement;
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.render = render;
-
 var _react = __webpack_require__(46);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _server = __webpack_require__(95);
 
-var _HelloCompo = __webpack_require__(177);
+var _server2 = _interopRequireDefault(_server);
+
+var _greet = __webpack_require__(177);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function render() {
-  return (0, _server.renderToString)(_react2.default.createElement(_HelloCompo.HelloCompo, null));
-}
+_server2.default.renderToString(_react2.default.createElement(_greet.Greet, null));
 
 /***/ }),
 /* 80 */
@@ -20978,7 +20973,7 @@ module.exports = '15.6.2';
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.HelloCompo = undefined;
+exports.Greet = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -20996,27 +20991,27 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var HelloCompo = exports.HelloCompo = function (_React$Component) {
-  _inherits(HelloCompo, _React$Component);
+var Greet = exports.Greet = function (_React$Component) {
+  _inherits(Greet, _React$Component);
 
-  function HelloCompo() {
-    _classCallCheck(this, HelloCompo);
+  function Greet() {
+    _classCallCheck(this, Greet);
 
-    return _possibleConstructorReturn(this, (HelloCompo.__proto__ || Object.getPrototypeOf(HelloCompo)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Greet.__proto__ || Object.getPrototypeOf(Greet)).apply(this, arguments));
   }
 
-  _createClass(HelloCompo, [{
+  _createClass(Greet, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'h1',
         null,
-        'Hello'
+        'Hello World.'
       );
     }
   }]);
 
-  return HelloCompo;
+  return Greet;
 }(_react2.default.Component);
 
 /***/ }),
