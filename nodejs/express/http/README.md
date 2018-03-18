@@ -1,2 +1,2 @@
 npm i
-npm start
+node main
