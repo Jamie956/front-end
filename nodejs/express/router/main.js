@@ -5,8 +5,8 @@ var router = express.Router();
 // customizing the behavior of router.param()
 router.param(function(param, option) {
   return function (req, res, next, val) {
-    console.log('val => ' + val);
-    console.log('option => ' + option);
+    console.log('val: ' + val);
+    console.log('option: ' + option);
     if (val == option) {
       next();
     }
