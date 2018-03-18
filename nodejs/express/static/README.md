@@ -1,5 +1,5 @@
 npm i
-npm start
+node main
 
 http://localhost:3000/images/mo.jpg
 
