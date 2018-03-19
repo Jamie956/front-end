@@ -1,16 +1,17 @@
 {
-  "name": "sad",
+  "name": "css",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "webpack --watch"
+    "dist": "webpack"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^0.28.10",
     "style-loader": "^0.20.2",
-    "webpack": "^3.4.0"
+    "webpack": "^3.4.0",
+    "html-webpack-plugin": "^3.0.4"
   }
 }
