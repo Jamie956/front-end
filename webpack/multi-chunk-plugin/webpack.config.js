@@ -10,9 +10,7 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new HTMLWebpackPlugin({
-			title: 'Oops'
-		}),
+		new HTMLWebpackPlugin(),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor'
 		}),
@@ -21,7 +19,7 @@ module.exports = {
 		})
 	],
 	output: {
-		filename: '[name].[chunkhash].js',
+		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'dist'),
 	}
 };
