@@ -8,15 +8,13 @@ module.exports = {
 		other: './src/other.js'
 	},
 	plugins: [
-		new HTMLWebpackPlugin({
-			title: 'Code Splitting'
-		}),
+		new HTMLWebpackPlugin(),
 		new webpack.optimize.CommonsChunkPlugin({
-			name: 'common' // Specify the common bundle's name.
+			name: 'common'
 		})
 	],
 	output: {
 		filename: '[name].bundle.js',
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, 'dist')
 	}
 };
