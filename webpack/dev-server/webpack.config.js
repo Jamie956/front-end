@@ -8,9 +8,12 @@ module.exports = {
 			template: "./src/index.html"
 		})
 	],
+	watchOptions: {
+		poll: 1000
+	},
 	devServer: {
 		contentBase: './dist',
-		port: 4000
+		port: 3000
 	},
 	output: {
 		filename: 'bundle.js',
