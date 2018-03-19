@@ -7,7 +7,9 @@ module.exports = {
 		print: "./src/print.js"
 	},
 	plugins: [
-    new HtmlWebpackPlugin({})
+    new HtmlWebpackPlugin({
+			template: './src/index.html'
+		})
   ],
 	output: {
 		filename: '[name].bundle.js',
