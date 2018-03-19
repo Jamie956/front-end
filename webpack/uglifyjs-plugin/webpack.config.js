@@ -1,15 +1,16 @@
 const path = require('path');
-// const webpack = require('webpack'); //to access built-in plugins
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 	entry: './src/main.js',
+	plugins: [
+		new UglifyJSPlugin({
+			sourceMap: true
+		})
+	],
+	devtool: 'source-map',
 	output: {
 		filename: 'bundle.js',
-		path: path.resolve(__dirname, 'dist'),
-	},
-	plugins: [
-		// new webpack.optimize.UglifyJsPlugin()
-		new UglifyJSPlugin()
-  ]
+		path: path.resolve(__dirname, 'dist')
+	}
 };
