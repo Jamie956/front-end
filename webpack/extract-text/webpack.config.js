@@ -1,15 +1,8 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const { WebPlugin } = require('web-webpack-plugin');
 
 module.exports = {
-  entry: {
-    app: './src/main.js'
-  },
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
-  },
+  entry: './src/main.js',
   module: {
     rules: [{
       test: /\.css/,
@@ -19,12 +12,12 @@ module.exports = {
     }]
   },
   plugins: [
-    new WebPlugin({
-      template: './src/template.html',
-      filename: 'index.html'
-    }),
     new ExtractTextPlugin({
-      filename: `[name].css`
+      filename: 'bundle.css'
     })
-  ]
+  ],
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
 };
