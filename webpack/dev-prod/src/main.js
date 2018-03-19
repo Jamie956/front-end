@@ -1,6 +1,6 @@
 console.log('Hello World.');
 
-// consoles.log('Hello World.');//error code
+consoles.log('Hello World.');//error code
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('Looks like we are in development mode!');
