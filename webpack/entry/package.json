@@ -1,10 +1,10 @@
 {
-	"name": "sad",
+	"name": "entry",
 	"version": "1.0.0",
 	"description": "",
 	"main": "main.js",
 	"scripts": {
-		"watch": "webpack --watch"
+		"dist": "webpack"
 	},
 	"author": "",
 	"license": "ISC",
