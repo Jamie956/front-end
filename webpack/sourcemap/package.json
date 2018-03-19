@@ -1,16 +1,15 @@
 {
-	"name": "sad",
+	"name": "sourcemap",
 	"version": "1.0.0",
 	"description": "",
 	"main": "main.js",
 	"scripts": {
-		"start": "webpack",
-		"watch": "webpack --watch",
-		"json": "webpack --json > stats.json"
+		"dist": "webpack"
 	},
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"webpack": "^3.4.0"
+		"webpack": "^3.4.0",
+		"html-webpack-plugin": "^3.0.4"
 	}
 }
