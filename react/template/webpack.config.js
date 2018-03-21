@@ -15,7 +15,8 @@ module.exports = {
     }]
   },
   devServer: {
-		contentBase: './dist'
+    contentBase: './dist',
+    port: 3000
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -24,7 +25,7 @@ module.exports = {
     })
   ],
   output: {
-    path: __dirname + "/dist",
+    path: "dist",
     filename: "main.js"
   }
 };
