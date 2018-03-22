@@ -5,7 +5,8 @@
 	"main": "main.js",
 	"scripts": {
 		"dist": "webpack",
-		"dev": "webpack-dev-server"
+		"dev": "webpack-dev-server",
+		"hot": "webpack-dev-server --inline --hot"
 	},
 	"author": "",
 	"license": "ISC",
