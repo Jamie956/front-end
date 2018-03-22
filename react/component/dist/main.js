@@ -19784,8 +19784,43 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Layout = function (_React$Component) {
-		_inherits(Layout, _React$Component);
+	var Foo = function (_React$Component) {
+		_inherits(Foo, _React$Component);
+
+		function Foo() {
+			_classCallCheck(this, Foo);
+
+			return _possibleConstructorReturn(this, (Foo.__proto__ || Object.getPrototypeOf(Foo)).apply(this, arguments));
+		}
+
+		_createClass(Foo, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"h1",
+					null,
+					"It is Foo"
+				);
+			}
+		}]);
+
+		return Foo;
+	}(_react2.default.Component);
+
+	function Bar() {
+		return _react2.default.createElement(
+			"div",
+			null,
+			_react2.default.createElement(
+				"h1",
+				null,
+				"It is Bar"
+			)
+		);
+	}
+
+	var Layout = function (_React$Component2) {
+		_inherits(Layout, _React$Component2);
 
 		function Layout() {
 			_classCallCheck(this, Layout);
@@ -19797,9 +19832,10 @@
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
-					"h1",
+					"div",
 					null,
-					" It 's Working!!!"
+					_react2.default.createElement(Foo, null),
+					_react2.default.createElement(Bar, null)
 				);
 			}
 		}]);
