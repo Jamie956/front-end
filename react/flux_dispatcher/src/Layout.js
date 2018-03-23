@@ -1,19 +1,39 @@
 import React from "react";
-import Store from "./Store";
-import Dispatcher from "./Dispatcher";
+import { Dispatcher } from "flux";
 
+/**
+ * Dispatcher
+ */
+const dispatcher = new Dispatcher;
+/**
+ * Store
+ */
+class Store {
+	handleActions(action) {
+		console.log(action);
+	}
+}
+const store = new Store;
+dispatcher.register(store.handleActions.bind(store));
+/**
+ * Action
+ */
+class Action {
+	create(text) {
+		dispatcher.dispatch({ type: "CREATE", text });
+	}
+}
+const action = new Action;
+/**
+ * 
+ */
 export default class Layout extends React.Component {
-
-  foo(){
-    Dispatcher.dispatch({type: "CREATE", text: "Create a Foo."});
-  }
-
+	handleCreate() {
+		action.create(Date.now());
+	}
 	render() {
-    this.foo();
-
 		return (
-			<h1> It 's Working!!!</h1>
-      
+			<button onClick={this.handleCreate.bind(this)}>Create</button>
 		);
 	}
 }
