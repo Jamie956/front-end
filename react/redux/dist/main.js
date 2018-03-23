@@ -49,26 +49,27 @@
 	var _redux = __webpack_require__(1);
 
 	var reduer = function reduer(state, action) {
-	    if (action.type === "INC") {
-	        return state + action.payload;
+	    if (action.type === 'GREET') {
+	        return action.text;
 	    }
-	    if (action.type === "DEC") {
-	        return state - action.payload;
-	    }
-	    return state;
+	    // if(action.type === "DEC"){
+	    //     return state - action.payload;
+	    // }
+	    // return state;
+	    // return 99;
 	};
 
 	var store = (0, _redux.createStore)(reduer, 0);
 
 	store.subscribe(function () {
-	    console.log("store changed", store.getState());
+	    console.log(store.getState());
 	});
 
-	store.dispatch({ type: "INC", payload: 1 });
-	store.dispatch({ type: "INC", payload: 2 });
-	store.dispatch({ type: "INC", payload: 22 });
-	store.dispatch({ type: "INC", payload: 1 });
-	store.dispatch({ type: "DEC", payload: 1000 });
+	store.dispatch({ type: "GREET", text: 'Hello World.' });
+	// store.dispatch({type: "INC", payload: 2});
+	// store.dispatch({type: "INC", payload: 22});
+	// store.dispatch({type: "INC", payload: 1});
+	// store.dispatch({type: "DEC", payload: 1000});
 
 /***/ }),
 /* 1 */
