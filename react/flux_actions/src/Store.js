@@ -5,7 +5,11 @@ class Store {
     console.log(action);
     switch(action.type) {
       case "CREATE": {
-        console.log('Is CREATE.');
+        console.log('CREATE.');
+        break;
+      }
+      case "UPDATE": {
+        console.log('UPDATE.');
         break;
       }
     }

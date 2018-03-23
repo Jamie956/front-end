@@ -6,12 +6,15 @@ export default class Layout extends React.Component {
   create(){
     Action.create(Date.now());
 	};
-	
+  update(){
+    Action.update(Date.now());
+	};
 	render() {
 		return (
 			<div>
-				<h1> It 's Working!!!</h1>
 				<button onClick={this.create.bind(this)}>Create</button>
+				<br/>
+				<button onClick={this.update.bind(this)}>Update</button>
 			</div>
 		);
 	}

@@ -19809,20 +19809,26 @@
 				Action.create(Date.now());
 			}
 		}, {
+			key: "update",
+			value: function update() {
+				Action.update(Date.now());
+			}
+		}, {
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
 					null,
 					_react2.default.createElement(
-						"h1",
-						null,
-						" It 's Working!!!"
-					),
-					_react2.default.createElement(
 						"button",
 						{ onClick: this.create.bind(this) },
 						"Create"
+					),
+					_react2.default.createElement("br", null),
+					_react2.default.createElement(
+						"button",
+						{ onClick: this.update.bind(this) },
+						"Update"
 					)
 				);
 			}
@@ -19865,7 +19871,12 @@
 	      switch (action.type) {
 	        case "CREATE":
 	          {
-	            console.log('Is CREATE.');
+	            console.log('CREATE.');
+	            break;
+	          }
+	        case "UPDATE":
+	          {
+	            console.log('UPDATE.');
 	            break;
 	          }
 	      }
@@ -20211,6 +20222,7 @@
 	  value: true
 	});
 	exports.create = create;
+	exports.update = update;
 
 	var _Dispatcher = __webpack_require__(161);
 
@@ -20220,6 +20232,10 @@
 
 	function create(text) {
 	  _Dispatcher2.default.dispatch({ type: "CREATE", text: text });
+	}
+
+	function update(text) {
+	  _Dispatcher2.default.dispatch({ type: "UPDATE", text: text });
 	}
 
 /***/ })
