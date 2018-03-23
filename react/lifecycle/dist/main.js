@@ -76,12 +76,22 @@
 		_createClass(Layout, [{
 			key: "componentWillMount",
 			value: function componentWillMount() {
-				console.log('componentWillMount');
+				console.log('WillMount');
 			}
+			//Call it, when component inserted to the DOM
+
+		}, {
+			key: "componentDidMount",
+			value: function componentDidMount() {
+				console.log('DidMount');
+			}
+
+			//Call it, when component is removed from the DOM
+
 		}, {
 			key: "componentWillUnmount",
 			value: function componentWillUnmount() {
-				console.log('componentWillUnmount');
+				console.log('WillUnmount');
 			}
 		}, {
 			key: "render",
@@ -89,7 +99,7 @@
 				return _react2.default.createElement(
 					"h1",
 					null,
-					" It 's Working!!!"
+					"U know"
 				);
 			}
 		}]);
@@ -98,12 +108,14 @@
 	}(_react2.default.Component);
 
 	setTimeout(function () {
+		console.log('ready to remove component');
 		_reactDom2.default.unmountComponentAtNode(document.getElementById('app'));
 	}, 3000);
 
 	setTimeout(function () {
+		console.log('ready to render component');
 		_reactDom2.default.render(_react2.default.createElement(Layout, null), document.getElementById('app'));
-	}, 5000);
+	}, 6000);
 
 	_reactDom2.default.render(_react2.default.createElement(Layout, null), document.getElementById('app'));
 
