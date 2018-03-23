@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "router",
   "version": "0.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -16,12 +16,10 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "webpack": "^1.12.9",
-    "html-webpack-plugin": "^3.0.4",
-    "webpack-dev-server": "^1.14.1"
+    "html-webpack-plugin": "^3.0.4"
   },
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server --inline --hot"
+    "start": "webpack"
   },
   "author": "",
   "license": "ISC"

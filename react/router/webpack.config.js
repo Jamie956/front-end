@@ -2,8 +2,7 @@ var path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  context: path.join(__dirname, "src"),
-  entry: "./main.js",
+  entry: "./src/main.js",
   module: {
     loaders: [{
       test: /\.jsx?$/,
@@ -14,17 +13,14 @@ module.exports = {
       }
     }]
   },
-  devServer: {
-		contentBase: './dist'
-  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'template.html',
+      template: './src/index.html',
       filename: 'index.html'
     })
   ],
   output: {
-    path: __dirname + "/dist",
+    path: "./dist",
     filename: "main.js"
   }
 };
