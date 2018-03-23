@@ -51,59 +51,59 @@
 	var _redux = __webpack_require__(1);
 
 	var userReducer = function userReducer() {
-	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-	    var action = arguments[1];
+		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+		var action = arguments[1];
 
-	    switch (action.type) {
-	        case "SET_NAME":
-	            {
-	                return _extends({}, state, { name: action.payload });
-	                break;
-	            }
-	        case "SET_AGE":
-	            {
-	                return _extends({}, state, { age: action.payload });
-	                break;
-	            }
-	    }
-	    return state;
+		switch (action.type) {
+			case "SET_NAME":
+				{
+					return _extends({}, state, { name: action.payload });
+					break;
+				}
+			case "SET_AGE":
+				{
+					return _extends({}, state, { age: action.payload });
+					break;
+				}
+		}
+		return state;
 	};
 
-	var tweetsReducer = function tweetsReducer() {
-	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-	    var action = arguments[1];
+	var itemReducer = function itemReducer() {
+		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+		var action = arguments[1];
 
-	    switch (action.type) {
-	        case "ADD_TWEET":
-	            {
-	                return state.concat({
-	                    id: Date.now(),
-	                    text: action.payload
-	                });
-	                break;
-	            }
-	    }
-	    return state;
+		switch (action.type) {
+			case "ADD_ITEM":
+				{
+					return state.concat({
+						id: Date.now(),
+						text: action.payload
+					});
+					break;
+				}
+		}
+		return state;
 	};
 
 	var reducers = (0, _redux.combineReducers)({
-	    user: userReducer,
-	    tweets: tweetsReducer
+		user: userReducer,
+		item: itemReducer
 	});
 
 	var store = (0, _redux.createStore)(reducers);
 
 	store.subscribe(function () {
-	    console.log(store.getState());
+		console.log(store.getState());
 	});
 
-	store.dispatch({ type: "", payload: "1" });
-	store.dispatch({ type: "SET_NAME", payload: "Will" });
-	store.dispatch({ type: "SET_AGE", payload: 35 });
-	store.dispatch({ type: "SET_AGE", payload: 34 });
+	// store.dispatch({ type: "", payload: "1" })
+	store.dispatch({ type: "SET_NAME", payload: "Jamie" });
+	store.dispatch({ type: "SET_AGE", payload: 18 });
+	// store.dispatch({ type: "SET_AGE", payload: 34 })
 
-	store.dispatch({ type: "ADD_TWEET", payload: "OMG LIKE LOL" });
-	store.dispatch({ type: "ADD_TWEET", payload: "I am so like seriously like totally like right now" });
+	store.dispatch({ type: "ADD_ITEM", payload: 'Foo' });
+	store.dispatch({ type: "ADD_ITEM", payload: 'Bar' });
 
 /***/ }),
 /* 1 */
