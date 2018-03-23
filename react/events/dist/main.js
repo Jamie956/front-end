@@ -54,13 +54,13 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Controller = __webpack_require__(159);
+	var _layout = __webpack_require__(159);
 
-	var _Controller2 = _interopRequireDefault(_Controller);
+	var _layout2 = _interopRequireDefault(_layout);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(_Controller2.default, null), document.getElementById('app'));
+	_reactDom2.default.render(_react2.default.createElement(_layout2.default, null), document.getElementById('app'));
 
 /***/ }),
 /* 1 */
@@ -19778,13 +19778,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Store = __webpack_require__(160);
+	var _store = __webpack_require__(160);
 
-	var _Store2 = _interopRequireDefault(_Store);
+	var _store2 = _interopRequireDefault(_store);
 
-	var _Row = __webpack_require__(162);
+	var _row = __webpack_require__(162);
 
-	var _Row2 = _interopRequireDefault(_Row);
+	var _row2 = _interopRequireDefault(_row);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19794,47 +19794,44 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Controller = function (_React$Component) {
-		_inherits(Controller, _React$Component);
+	var Layout = function (_React$Component) {
+		_inherits(Layout, _React$Component);
 
-		function Controller() {
-			_classCallCheck(this, Controller);
+		function Layout() {
+			_classCallCheck(this, Layout);
 
-			var _this = _possibleConstructorReturn(this, (Controller.__proto__ || Object.getPrototypeOf(Controller)).call(this));
+			var _this = _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).call(this));
 
 			_this.state = {
-				tasks: _Store2.default.get()
+				tasks: _store2.default.getTasks()
 			};
 			return _this;
 		}
 
-		_createClass(Controller, [{
+		_createClass(Layout, [{
 			key: "componentWillMount",
 			value: function componentWillMount() {
 				var _this2 = this;
 
-				_Store2.default.on("change", function () {
+				_store2.default.on("change", function () {
 					_this2.setState({
-						tasks: _Store2.default.get()
+						tasks: _store2.default.getTasks()
 					});
 				});
 			}
 		}, {
 			key: "create",
 			value: function create() {
-				_Store2.default.createTask('foo');
+				_store2.default.createTask(Date.now());
 			}
 		}, {
 			key: "render",
 			value: function render() {
 				var tasks = this.state.tasks;
 
-				console.log(tasks);
-
 				var Rows = tasks.map(function (task) {
-					return _react2.default.createElement(_Row2.default, _extends({ key: task.id }, task));
+					return _react2.default.createElement(_row2.default, _extends({ key: task.id }, task));
 				});
-				console.log(Rows);
 
 				return _react2.default.createElement(
 					"div",
@@ -19849,10 +19846,10 @@
 			}
 		}]);
 
-		return Controller;
+		return Layout;
 	}(_react2.default.Component);
 
-	exports.default = Controller;
+	exports.default = Layout;
 
 /***/ }),
 /* 160 */
@@ -19906,8 +19903,8 @@
 				this.emit("change");
 			}
 		}, {
-			key: "get",
-			value: function get() {
+			key: "getTasks",
+			value: function getTasks() {
 				return this.tasks;
 			}
 		}]);

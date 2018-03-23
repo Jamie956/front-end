@@ -1,35 +1,32 @@
 import React from "react";
-import Store from "./Store";
-import Row from "./Row";
+import Store from "./store";
+import Row from "./row";
 
-export default class Controller extends React.Component {
+export default class Layout extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			tasks: Store.get(),
+			tasks: Store.getTasks(),
 		};
 	}
 	
 	componentWillMount() {
 		Store.on("change", () => {
 			this.setState({
-				tasks: Store.get(),
+				tasks: Store.getTasks(),
 			});
 		});
 	};
 
 	create(){
-		Store.createTask('foo');
+		Store.createTask(Date.now());
 	}
 
 	render() {
 		const { tasks } = this.state;
-		console.log(tasks);
-
 		const Rows = tasks.map((task) => {
 			return <Row key={task.id} {...task}/>;
 		});
-		console.log(Rows);
 		
 		return (
 			<div>

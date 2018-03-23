@@ -27,7 +27,7 @@ class Store extends EventEmitter {
 		this.emit("change");
 	};
 
-	get(){
+	getTasks(){
 		return this.tasks;
 	};
 }
