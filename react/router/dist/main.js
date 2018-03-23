@@ -19793,6 +19793,12 @@
 	      { to: "/about" },
 	      "About"
 	    ),
+	    " | ",
+	    _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: "/search/soso" },
+	      "Search"
+	    ),
 	    props.children,
 	    props.location.pathname
 	  );
@@ -19822,6 +19828,18 @@
 	  );
 	};
 
+	var Search = function Search() {
+	  return _react2.default.createElement(
+	    "div",
+	    null,
+	    _react2.default.createElement(
+	      "h2",
+	      null,
+	      "Search"
+	    )
+	  );
+	};
+
 	var Layout = function Layout() {
 	  return _react2.default.createElement(
 	    _reactRouter.Router,
@@ -19830,7 +19848,8 @@
 	      _reactRouter.Route,
 	      { path: "/", component: Links },
 	      _react2.default.createElement(_reactRouter.IndexRoute, { component: Home }),
-	      _react2.default.createElement(_reactRouter.Route, { path: "/about", component: About })
+	      _react2.default.createElement(_reactRouter.Route, { path: "/about", component: About }),
+	      _react2.default.createElement(_reactRouter.Route, { path: "/search(/:key)", component: Search })
 	    )
 	  );
 	};
