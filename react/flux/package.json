@@ -1,5 +1,5 @@
 {
-  "name": "actions",
+  "name": "flux",
   "version": "0.0.0",
   "description": "",
   "main": "webpack.config.js",

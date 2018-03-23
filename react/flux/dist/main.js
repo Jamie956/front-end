@@ -19767,7 +19767,7 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -19790,77 +19790,112 @@
 	 * Dispatcher
 	 */
 	var dispatcher = new _flux.Dispatcher();
+
 	/**
 	 * Store
 	 */
 
 	var Store = function () {
-		function Store() {
-			_classCallCheck(this, Store);
-		}
+	  function Store() {
+	    _classCallCheck(this, Store);
+	  }
 
-		_createClass(Store, [{
-			key: "handleActions",
-			value: function handleActions(action) {
-				console.log(action);
-			}
-		}]);
+	  _createClass(Store, [{
+	    key: "handleActions",
+	    value: function handleActions(action) {
+	      console.log(action);
+	      switch (action.type) {
+	        case "CREATE":
+	          {
+	            console.log('CREATE.');
+	            break;
+	          }
+	        case "UPDATE":
+	          {
+	            console.log('UPDATE.');
+	            break;
+	          }
+	      }
+	    }
+	  }]);
 
-		return Store;
+	  return Store;
 	}();
 
 	var store = new Store();
 	dispatcher.register(store.handleActions.bind(store));
+
 	/**
 	 * Action
 	 */
 
 	var Action = function () {
-		function Action() {
-			_classCallCheck(this, Action);
-		}
+	  function Action() {
+	    _classCallCheck(this, Action);
+	  }
 
-		_createClass(Action, [{
-			key: "create",
-			value: function create(text) {
-				dispatcher.dispatch({ type: "CREATE", text: text });
-			}
-		}]);
+	  _createClass(Action, [{
+	    key: "create",
+	    value: function create(text) {
+	      dispatcher.dispatch({ type: "CREATE", text: text });
+	    }
+	  }, {
+	    key: "update",
+	    value: function update(text) {
+	      dispatcher.dispatch({ type: "UPDATE", text: text });
+	    }
+	  }]);
 
-		return Action;
+	  return Action;
 	}();
 
 	var action = new Action();
+
 	/**
-	 * 
+	 * Layout
 	 */
 
 	var Layout = function (_React$Component) {
-		_inherits(Layout, _React$Component);
+	  _inherits(Layout, _React$Component);
 
-		function Layout() {
-			_classCallCheck(this, Layout);
+	  function Layout() {
+	    _classCallCheck(this, Layout);
 
-			return _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).apply(this, arguments));
-		}
+	    return _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).apply(this, arguments));
+	  }
 
-		_createClass(Layout, [{
-			key: "handleCreate",
-			value: function handleCreate() {
-				action.create(Date.now());
-			}
-		}, {
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"button",
-					{ onClick: this.handleCreate.bind(this) },
-					"Create"
-				);
-			}
-		}]);
+	  _createClass(Layout, [{
+	    key: "handleCreate",
+	    value: function handleCreate() {
+	      action.create(Date.now());
+	    }
+	  }, {
+	    key: "handleUpdate",
+	    value: function handleUpdate() {
+	      action.update(Date.now());
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "button",
+	          { onClick: this.handleCreate.bind(this) },
+	          "Create"
+	        ),
+	        " | ",
+	        _react2.default.createElement(
+	          "button",
+	          { onClick: this.handleUpdate.bind(this) },
+	          "Update"
+	        )
+	      );
+	    }
+	  }]);
 
-		return Layout;
+	  return Layout;
 	}(_react2.default.Component);
 
 	exports.default = Layout;
