@@ -19770,8 +19770,6 @@
 	  value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -19780,64 +19778,25 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // import React from "react";
-	// import { Link } from "react-router";
-
-	// export default class Layout extends React.Component {
-	// 	render() {
-	//     const pathname = this.props.location.pathname;
-	// 		return (
-	// 			<div>
-	//         <Link to="bar">Bar</Link> |
-	//         <Link to="baz">Baz</Link> |
-	//         <Link to="">Foo</Link> |
-	//         {this.props.children} 
-	//         {pathname}
-	//       </div>
-	// 		);
-	// 	}
-	// }
-
-
-	var Mylink = function (_React$Component) {
-	  _inherits(Mylink, _React$Component);
-
-	  function Mylink() {
-	    _classCallCheck(this, Mylink);
-
-	    return _possibleConstructorReturn(this, (Mylink.__proto__ || Object.getPrototypeOf(Mylink)).apply(this, arguments));
-	  }
-
-	  _createClass(Mylink, [{
-	    key: "render",
-	    value: function render() {
-	      var pathname = this.props.location.pathname;
-	      return _react2.default.createElement(
-	        "div",
-	        null,
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: "" },
-	          "Home"
-	        ),
-	        " | ",
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: "/about" },
-	          "About"
-	        ),
-	        this.props.children,
-	        pathname
-	      );
-	    }
-	  }]);
-
-	  return Mylink;
-	}(_react2.default.Component);
+	var Links = function Links(props) {
+	  return _react2.default.createElement(
+	    "div",
+	    null,
+	    _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: "/" },
+	      "Home"
+	    ),
+	    " | ",
+	    _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: "/about" },
+	      "About"
+	    ),
+	    props.children,
+	    props.location.pathname
+	  );
+	};
 
 	var Home = function Home() {
 	  return _react2.default.createElement(
@@ -19863,33 +19822,18 @@
 	  );
 	};
 
-	var Layout = function (_React$Component2) {
-	  _inherits(Layout, _React$Component2);
-
-	  function Layout() {
-	    _classCallCheck(this, Layout);
-
-	    return _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).apply(this, arguments));
-	  }
-
-	  _createClass(Layout, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        _reactRouter.Router,
-	        { history: _reactRouter.hashHistory },
-	        _react2.default.createElement(
-	          _reactRouter.Route,
-	          { path: "/", component: Mylink },
-	          _react2.default.createElement(_reactRouter.IndexRoute, { component: Home }),
-	          _react2.default.createElement(_reactRouter.Route, { path: "/about", component: About })
-	        )
-	      );
-	    }
-	  }]);
-
-	  return Layout;
-	}(_react2.default.Component);
+	var Layout = function Layout() {
+	  return _react2.default.createElement(
+	    _reactRouter.Router,
+	    { history: _reactRouter.hashHistory },
+	    _react2.default.createElement(
+	      _reactRouter.Route,
+	      { path: "/", component: Links },
+	      _react2.default.createElement(_reactRouter.IndexRoute, { component: Home }),
+	      _react2.default.createElement(_reactRouter.Route, { path: "/about", component: About })
+	    )
+	  );
+	};
 
 	exports.default = Layout;
 

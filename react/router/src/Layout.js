@@ -1,18 +1,13 @@
 import React from "react";
 import { Router, Route, IndexRoute, hashHistory, Link } from "react-router";
 
-class Mylink extends React.Component {
-	render() {
-    const pathname = this.props.location.pathname;
-		return (
-			<div>
-        <Link to="">Home</Link> | <Link to="/about">About</Link>
-        {this.props.children}
-        {pathname}
-      </div>
-		);
-	}
-}
+const Links = (props) => (
+  <div>
+    <Link to="/">Home</Link> | <Link to="/about">About</Link>
+    {props.children}
+    {props.location.pathname}
+  </div>
+)
 
 const Home = () => (
   <div>
@@ -26,15 +21,13 @@ const About = () => (
   </div>
 )
 
-export default class Layout extends React.Component {
-	render() {
-		return (
-      <Router history={hashHistory}>
-        <Route path="/" component={Mylink}>
-            <IndexRoute component={Home}></IndexRoute>
-            <Route path="/about" component={About}></Route>
-        </Route>
-      </Router>
-		);
-	}
-}
+const Layout = () => (
+  <Router history={hashHistory}>
+    <Route path="/" component={Links}>
+        <IndexRoute component={Home} />
+        <Route path="/about" component={About} />
+    </Route>
+  </Router>  
+);
+
+export default Layout;
