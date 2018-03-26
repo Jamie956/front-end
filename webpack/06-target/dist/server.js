@@ -67,7 +67,7 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-consle.log('Hello World.');
+consle.log('Server');
 
 /***/ })
 /******/ ]);
