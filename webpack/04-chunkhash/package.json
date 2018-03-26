@@ -1,10 +1,10 @@
 {
-	"name": "chunk",
+	"name": "chunkhash",
 	"version": "1.0.0",
 	"description": "",
 	"main": "main.js",
 	"scripts": {
-		"dist": "webpack"
+		"start": "webpack"
 	},
 	"author": "",
 	"license": "ISC",
