@@ -1,2 +1,2 @@
 npm i
-npm run dist
+npm start
