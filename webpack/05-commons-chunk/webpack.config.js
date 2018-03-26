@@ -1,20 +1,18 @@
 const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
 	entry: {
-		main: './src/main.js',
-		other: './src/other.js'
+		foo: './src/foo.js',
+		bar: './src/bar.js'
 	},
 	plugins: [
-		new HTMLWebpackPlugin(),
 		new webpack.optimize.CommonsChunkPlugin({
-			name: 'common'
+			name: 'commons'
 		})
 	],
 	output: {
-		filename: '[name].bundle.js',
+		filename: '[name].js',
 		path: path.resolve(__dirname, 'dist')
 	}
 };

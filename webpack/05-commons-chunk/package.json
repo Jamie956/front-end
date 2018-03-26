@@ -1,5 +1,5 @@
 {
-	"name": "chunk",
+	"name": "commons-chunk",
 	"version": "1.0.0",
 	"description": "",
 	"main": "main.js",
@@ -9,7 +9,6 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"webpack": "^3.4.0",
-		"html-webpack-plugin": "^3.0.4"
+		"webpack": "^3.4.0"
 	}
 }
