@@ -4,12 +4,11 @@
 	"description": "",
 	"main": "main.js",
 	"scripts": {
-		"dist": "webpack"
+		"start": "webpack"
 	},
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"webpack": "^3.4.0",
-		"html-webpack-plugin": "^3.0.4"
+		"webpack": "^3.4.0"
 	}
 }
