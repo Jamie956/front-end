@@ -71,7 +71,7 @@
 
 
 var foo = function foo() {
-  console.log('Hello World.');
+  document.write('<h1>foo</h1>');
 };
 
 foo();
