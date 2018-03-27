@@ -5,6 +5,9 @@ module.exports = {
 	entry: './src/main.js',
 	plugins: [
 		new webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: '"dev"'
+			},
 			__DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
 		})
 	],

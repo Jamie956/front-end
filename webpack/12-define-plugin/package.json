@@ -4,8 +4,8 @@
 	"description": "",
 	"main": "main.js",
 	"scripts": {
-		"dev": "npx cross-env DEBUG=true webpack",
-		"prod": "npx cross-env DEBUG=false webpack"
+		"dev": "npx cross-env DEBUG=true webpack --config webpack.dev.js",
+		"prod": "npx cross-env DEBUG=false webpack --config webpack.prod.js"
 	},
 	"author": "",
 	"license": "ISC",

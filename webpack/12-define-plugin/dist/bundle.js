@@ -67,11 +67,14 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-document.write('<h1>Hello World</h1>');
+// document.write('<h1>Hello World</h1>');
 
-if (false) {
-  document.write(new Date());
-}
+// if (__DEV__) {
+//   document.write(new Date());
+// }
+
+console.log(false);
+console.log("prod");
 
 
 /***/ })
