@@ -2,7 +2,7 @@
   "name": "inline",
   "version": "1.0.0",
   "scripts": {
-    "dist": "webpack"
+    "start": "webpack"
   },
   "devDependencies": {
     "html-webpack-inline-source-plugin": "0.0.10",

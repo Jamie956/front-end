@@ -6,7 +6,10 @@ module.exports = {
   entry: './src/main.js',
   module: {
     rules: [
-      {test: /\.css$/, use: ['style-loader', 'css-loader?minimize']}
+      {
+        test: /\.css$/, 
+        use: ['style-loader', 'css-loader?minimize']
+      }
     ]
   },
   plugins: [
