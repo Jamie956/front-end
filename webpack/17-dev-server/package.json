@@ -4,9 +4,7 @@
 	"description": "",
 	"main": "main.js",
 	"scripts": {
-		"dist": "webpack",
-		"dev": "webpack-dev-server",
-		"hot": "webpack-dev-server --inline --hot"
+		"dev": "webpack-dev-server"
 	},
 	"author": "",
 	"license": "ISC",
