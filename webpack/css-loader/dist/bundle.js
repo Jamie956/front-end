@@ -93,8 +93,8 @@ var update = __webpack_require__(4)(content, options);
 if(content.locals) module.exports = content.locals;
 
 if(false) {
-	module.hot.accept("!!../node_modules/css-loader/index.js?minimize!./style.css", function() {
-		var newContent = require("!!../node_modules/css-loader/index.js?minimize!./style.css");
+	module.hot.accept("!!../node_modules/css-loader/index.js!./style.css", function() {
+		var newContent = require("!!../node_modules/css-loader/index.js!./style.css");
 
 		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 
@@ -128,7 +128,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "#app{text-align:center;color:red}", ""]);
+exports.push([module.i, "h1 {\r\n    text-align: center;\r\n    color: red;\r\n}", ""]);
 
 // exports
 
