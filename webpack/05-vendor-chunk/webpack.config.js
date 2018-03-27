@@ -6,20 +6,24 @@ module.exports = {
 	entry: {
 		main: './src/main.js',
 		vendor: [
-			'lodash'
+			'jquery'
 		]
 	},
 	plugins: [
-		new HTMLWebpackPlugin(),
-		new webpack.optimize.CommonsChunkPlugin({
-			name: 'vendor'
+		new HTMLWebpackPlugin({
+			template: './src/index.html'
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
-			name: 'manifest'
+			name: 'vendor',
+			filename: 'vendor.js'
+		}),
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'manifest',
+			filename: 'manifest.js'
 		})
 	],
 	output: {
-		filename: '[name].bundle.js',
+		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'dist')
 	}
 };
