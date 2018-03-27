@@ -1,11 +1,11 @@
 {
-	"name": "config",
+	"name": "merge",
 	"version": "1.0.0",
 	"description": "",
 	"main": "main.js",
 	"scripts": {
 		"dev": "webpack --config webpack.dev.js",
-		"prod": "webpack --config webpack.prod.js -p"
+		"prod": "webpack --config webpack.prod.js"
 	},
 	"author": "",
 	"license": "ISC",
@@ -13,6 +13,5 @@
 		"html-webpack-plugin": "^2.29.0",
 		"webpack": "^3.4.0",
 		"webpack-merge": "^4.1.0"
-	},
-	"dependencies": {}
+	}
 }
