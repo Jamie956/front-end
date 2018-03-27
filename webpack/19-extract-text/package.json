@@ -2,7 +2,7 @@
   "name": "extract-text",
   "version": "1.0.0",
   "scripts": {
-    "dist": "webpack"
+    "start": "webpack"
   },
   "devDependencies": {
     "extract-text-webpack-plugin": "^3.0.0",

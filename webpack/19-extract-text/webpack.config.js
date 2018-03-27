@@ -7,7 +7,7 @@ module.exports = {
     rules: [{
       test: /\.css/,
       use: ExtractTextPlugin.extract({
-        use: ['css-loader?minimize']
+        use: ['css-loader']
       })
     }]
   },
