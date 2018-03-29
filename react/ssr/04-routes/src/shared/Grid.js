@@ -6,11 +6,9 @@ class Grid extends Component {
 
     let repos
     if (__isBrowser__) {
-      console.log('111')
       repos = window.__INITIAL_DATA__
       delete window.__INITIAL_DATA__
     } else {
-      console.log('222')
       repos = this.props.staticContext.data
     }
     this.state = {

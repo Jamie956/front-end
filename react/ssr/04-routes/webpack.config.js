@@ -10,9 +10,17 @@ var browserConfig = {
     publicPath: '/'
   },
   module: {
-    rules: [
-      { test: /\.(js)$/, use: 'babel-loader' },
-    ]
+    rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['env', 'react'],
+          plugins: ['transform-object-rest-spread']
+        }
+      }
+    }]
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -31,9 +39,17 @@ var serverConfig = {
     publicPath: '/'
   },
   module: {
-    rules: [
-      { test: /\.(js)$/, use: 'babel-loader' }
-    ]
+    rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['env', 'react'],
+          plugins: ['transform-object-rest-spread']
+        }
+      }
+    }]
   },
   plugins: [
     new webpack.DefinePlugin({
