@@ -1,8 +1,8 @@
 {
-  "name": "exp",
+  "name": "temp",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "main.js",
   "scripts": {},
   "author": "",
   "license": "ISC",
