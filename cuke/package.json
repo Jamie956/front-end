@@ -4,16 +4,17 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
+    "axios": "^0.18.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0",
     "semantic-ui-react": "^0.79.0",
-    "validator": "^9.4.1",
-    "redux-devtools-extension": "^2.13.2"    
+    "validator": "^9.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
