@@ -26,6 +26,11 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    proxy: {
+      "*": "http://[::1]:3000"
+    }
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
