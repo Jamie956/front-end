@@ -8,8 +8,9 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 db.once('open', function () {
 	console.log("Connection Successful!");
-	savebook();
-	inserbook();
+	// savebook();
+	// inserbook();
+	findbook();
 });
 
 
@@ -41,5 +42,12 @@ function inserbook() {
 		} else {
 			console.log("Multiple documents inserted to Collection");
 		}
+	});
+}
+
+function findbook() {
+	Book.findOne({ name: 'MongoDB Tutorial' }, function (err, book) {
+		if (err) return handleError(err);
+		console.log(book);
 	});
 }
