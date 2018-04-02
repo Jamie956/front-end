@@ -10,12 +10,6 @@ app.use(bodyParser.json());
 mongoose.Promise = Promise;
 mongoose.connect('mongodb://localhost/mydb', { useMongoClient: true });
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-    console.log("Connection Successful!")
-});
-
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
