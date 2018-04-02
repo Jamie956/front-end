@@ -9,8 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^1.0.3",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "mongoose": "^5.0.12"
+    "mongoose": "^4.11.10"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
