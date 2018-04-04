@@ -39,8 +39,7 @@ class App extends React.Component {
 
     const divStyle = {
       color: 'blue',
-      height: '8%',
-      width: 600
+      height: 42,
     };
 
     return (
@@ -48,6 +47,8 @@ class App extends React.Component {
         <ReactTable
           data={data}
           columns={columns}
+          defaultPageSize={5}
+          className="-striped -highlight"
         />
       </div>
     );
