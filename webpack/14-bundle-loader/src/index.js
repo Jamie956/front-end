@@ -1,5 +1,5 @@
 // var load = require('bundle-loader!./a.bundle.js');
-var load = require('./a.bundle.js');
+var load = require('./hello.bundle.js');
 
 console.log(load);
 
