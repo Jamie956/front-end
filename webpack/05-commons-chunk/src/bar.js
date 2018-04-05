@@ -1,5 +1,5 @@
 var a = require('./partial/a');
-a.sayHello();
-
 var b = require('./partial/b');
+
+a.sayHello();
 b.sayHello();

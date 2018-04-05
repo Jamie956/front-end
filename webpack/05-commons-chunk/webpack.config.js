@@ -6,13 +6,13 @@ module.exports = {
 		foo: './src/foo.js',
 		bar: './src/bar.js'
 	},
+	output: {
+		filename: '[name].js',
+		path: path.resolve(__dirname, 'build')
+	},
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'commons'
 		})
 	],
-	output: {
-		filename: '[name].js',
-		path: path.resolve(__dirname, 'dist')
-	}
 };
