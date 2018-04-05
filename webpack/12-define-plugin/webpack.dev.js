@@ -2,7 +2,11 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-	entry: './src/main.js',
+	entry: './src/index.js',
+	output: {
+		filename: 'bundle.js',
+		path: path.resolve(__dirname, 'build')
+	},
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env': {
@@ -11,8 +15,4 @@ module.exports = {
 			__DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
 		})
 	],
-	output: {
-		filename: 'bundle.js',
-		path: path.resolve(__dirname, 'dist')
-	}
 };
