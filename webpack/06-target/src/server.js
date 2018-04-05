@@ -1,1 +1,1 @@
-consle.log('Server');
+console.log('Server');
