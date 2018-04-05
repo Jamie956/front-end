@@ -1,7 +1,7 @@
 {
   "name": "css-loader",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "start": "webpack"
   },
