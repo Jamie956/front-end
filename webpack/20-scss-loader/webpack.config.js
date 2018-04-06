@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-	entry: './src/main.js',
+	entry: './src/index.js',
 	module: {
 		rules: [{
 			test: /\.scss/,
@@ -16,6 +16,6 @@ module.exports = {
 	},
 	output: {
 		filename: 'bundle.js',
-		path: path.resolve(__dirname, 'dist')
+		path: path.resolve(__dirname, 'build')
 	}
 };
