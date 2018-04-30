@@ -1,1 +1,0 @@
-consle.log('foo');
