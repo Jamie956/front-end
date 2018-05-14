@@ -39,32 +39,32 @@ function isFormData(req) {
 
 //=============
 
-var form = new formidable.IncomingForm();
-form.on('field', function (field, value) {
-    console.log(field);
-    console.log(value);
-});
-form.on('file', function (name, file) {
-    console.log(name);
-    console.log(file);
-});
-form.on('end', function () {
-    res.end('upload complete!');
-});
-form.parse(req);
+// var form = new formidable.IncomingForm();
+// form.on('field', function (field, value) {
+//     console.log(field);
+//     console.log(value);
+// });
+// form.on('file', function (name, file) {
+//     console.log(name);
+//     console.log(file);
+// });
+// form.on('end', function () {
+//     res.end('upload complete!');
+// });
+// form.parse(req);
 
 //==============
 
-var form = new formidable.IncomingForm();
-form.parse(req, function (err, fields, files) {
-    console.log(fields);
-    console.log(files);
-    res.end('upload complete!');
-});
+// var form = new formidable.IncomingForm();
+// form.parse(req, function (err, fields, files) {
+//     console.log(fields);
+//     console.log(files);
+//     res.end('upload complete!');
+// });
 
 //==============
 
-form.on('progress', function(bytesReceived, bytesExpected){
-    var percent = Math.floor(bytesReceived / bytesExpected * 100);
-    console.log(percent);
-    });
+// form.on('progress', function (bytesReceived, bytesExpected) {
+//     var percent = Math.floor(bytesReceived / bytesExpected * 100);
+//     console.log(percent);
+// });
