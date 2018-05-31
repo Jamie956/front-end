@@ -31,20 +31,36 @@ app.get("/get", (req, res) => {
     });
 });
 
-app.get('/add', (req,res)=>{
-    axios
+app.get("/add", (req, res) => {
+  axios
     .post("http://localhost:8080/product", {
       id: "01",
       name: "tom"
     })
     .then(function(response) {
-    //   console.log(response);
-    res.json(response.data)
+      res.json(response.data);
     })
     .catch(function(error) {
       console.log(error);
     });
-})
+});
+
+app.get("/add2", (req, res) => {
+  axios({
+    method: "post",
+    url: "http://localhost:8080/product",
+    data: {
+      id: "01",
+      name: "tom"
+    }
+  })
+    .then(function(response) {
+      res.json(response.data);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+});
 
 app.listen("3000", () => {
   console.log("listen on port 3000");
