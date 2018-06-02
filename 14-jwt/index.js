@@ -17,16 +17,33 @@
 // });
 
 const express = require("express");
-const cookieParser = require('cookie-parser')
-const bodyParser = require('body-parser')
-
 app = express();
-app.use(cookieParser())
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+const path = require("path");
+const jwt = require("jsonwebtoken");
+
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.set("secret", "jwtsecret");
+app.use(express.static(path.resolve(__dirname)));
 
 app.get("/", (req, res) => {
-  res.send("hi");
+  res.sendFile("./index.html");
+});
+
+app.post("/authenticate", (req, res) => {
+  let user = {
+    name: req.body.name,
+    password: req.body.password
+  };
+  if (user.name == "tom" && user.password == "123") {
+    let token = jwt.sign(user, app.get("secret"), { expiresIn: 60 * 60 * 24 });
+    res.json({ success: true, msg: 'use your token', token: token });
+  } else {
+    res.json({ success: false, msg: "name or pwd error" });
+  }
 });
 
 app.listen("3000", () => {
