@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "validator": "^10.2.0",
-    "vdjs": "^1.0.0"
+    "validator": "^10.2.0"
   }
 }
