@@ -1,23 +1,6 @@
-// var token = jwt.sign(user, app.get("superSecret"), {
-//   expiresIn: 60 * 60 * 24
-// }); // 授权时效24小时
-
-// var token = req.body.token || req.query.token || req.headers["x-access-token"];
-
-// // 解码 token (验证 secret 和检查有效期（exp）)
-// jwt.verify(token, app.get("superSecret"), function(err, decoded) {
-//   if (err) {
-//     return res.json({ success: false, message: "无效的token." });
-//   } else {
-//     // 如果验证通过，在req中写入解密结果
-//     req.decoded = decoded;
-//     //console.log(decoded)  ;
-//     next(); //继续下一步路由
-//   }
-// });
-
 const express = require("express");
 app = express();
+const router = express.Router();
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const path = require("path");
@@ -39,11 +22,38 @@ app.post("/authenticate", (req, res) => {
     password: req.body.password
   };
   if (user.name == "tom" && user.password == "123") {
-    let token = jwt.sign(user, app.get("secret"), { expiresIn: 60 * 60 * 24 });
-    res.json({ success: true, msg: 'use your token', token: token });
+    let token = jwt.sign({ name: user.name }, app.get("secret"), {
+      expiresIn: 60 * 60 * 24
+    });
+    res.cookie("token", token, {
+      expires: new Date(Date.now() + 1000 * 60 * 60 * 24),
+      httpOnly: false
+    });
+    return res.json({ success: true, msg: "use your token", token: token });
   } else {
-    res.json({ success: false, msg: "name or pwd error" });
+    return res.json({ success: false, msg: "name or pwd error" });
   }
+});
+
+app.use(router);
+router.use((req, res, next) => {
+  let token = req.cookies.token;
+  if (token) {
+    jwt.verify(token, app.get("secret"), (err, decoded) => {
+      if (err) {
+        return res.json({ success: false, msg: "bad token" });
+      } else {
+        req.decoded = decoded;
+        next();
+      }
+    });
+  } else {
+    res.status(403).send({ success: false, msg: "token not found" });
+  }
+});
+router.get("/api", (req, res) => {
+  console.log(req.decoded);
+  res.send("welcome use api.");
 });
 
 app.listen("3000", () => {
