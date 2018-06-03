@@ -2,8 +2,8 @@ const user = (req, res, next) => {
   //match url
   //if(user)
   //to be or not
-  //   console.log(req.url)
-  let match = req.url.match(/^\/user\/(.+)/); //http://localhost:3000/user/tom
+  //http://localhost:3000/api/user/tom
+  let match = req.url.match(/^\/user\/(.+)/);
   if (match) {
     let rawUser = match[1];
     if (rawUser === "tom") {
