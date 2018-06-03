@@ -1,3 +1,4 @@
+//logger middleware matche :arg
 const setup = format => {
   const regexp = /:(\w+)/g;
   return (logger = (req, res, next) => {
