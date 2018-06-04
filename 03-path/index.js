@@ -20,4 +20,6 @@ console.log('resolve => '+path.resolve('css'));
 
 console.log('resolve => '+path.resolve('/foo/bar', './baz'));
 
+console.log('resolve => '+path.resolve('/foo'));
+
 // const css = require('../../build/bundle.server');

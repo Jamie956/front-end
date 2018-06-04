@@ -9,7 +9,10 @@ const storage = multer.diskStorage({
   //   destination: function(req, file, cb) {
   //     cb(null, path.resolve("images"));
   //   },
-  destination: path.resolve("images"), //auto create dir
+
+  //   destination: path.resolve("images"), //auto create dir
+
+  destination: path.resolve("/images"), //auto create dir
   filename: function(req, file, cb) {
     cb(
       null,
