@@ -3,13 +3,18 @@ const app = express();
 app.use(express.static("./public"));
 const path = require("path");
 const multer = require("multer");
+const md5 = require("md5");
 
 const storage = multer.diskStorage({
-  destination: function(req, file, cb) {
-    cb(null, path.resolve("images"));
-  },
+  //   destination: function(req, file, cb) {
+  //     cb(null, path.resolve("images"));
+  //   },
+  destination: path.resolve("images"),
   filename: function(req, file, cb) {
-    cb(null, "hi" + Date.now() + path.extname(file.originalname));
+    cb(
+      null,
+      file.fieldname + "-" + md5(file) + path.extname(file.originalname)
+    );
   }
 });
 const upload = multer({ storage: storage });
