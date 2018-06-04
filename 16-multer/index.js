@@ -10,9 +10,9 @@ const storage = multer.diskStorage({
   //     cb(null, path.resolve("images"));
   //   },
 
-  //   destination: path.resolve("images"), //auto create dir
+  destination: path.resolve("images"), //auto create dir
 
-  destination: path.resolve("/images"), //auto create dir
+  //   destination: path.resolve("/images"), //auto create dir
   filename: function(req, file, cb) {
     cb(
       null,
@@ -20,7 +20,10 @@ const storage = multer.diskStorage({
     );
   }
 });
-const upload = multer({ storage: storage });
+
+const limits = { fileSize: 2 * 1024 }; //byte
+
+const upload = multer({ storage: storage, limits: limits });
 
 app.post("/upload", upload.single("logo"), (req, res, next) => {
   console.log(req.file);
