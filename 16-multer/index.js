@@ -12,10 +12,9 @@ const storage = multer.diskStorage({
     cb(null, "hi" + Date.now() + path.extname(file.originalname));
   }
 });
-
 const upload = multer({ storage: storage });
 
-app.post("/upload", upload.single("avatar"), (req, res) => {
+app.post("/upload", upload.single("logo"), (req, res, next) => {
   res.end("ok");
 });
 app.listen(3000, console.log("listen on port 3000"));
