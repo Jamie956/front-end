@@ -7,3 +7,14 @@ sharp("./cake.jpeg")
   .toFile("./resize.jpeg")
   .then(data => console.log(data))
   .catch(err => console.log(err));
+
+  //===
+
+  sharp(srcPath)
+  .metadata()
+  .then((metadata) => {
+    console.log(metadata)
+    if(metadata.height>48){
+
+    }
+  })
