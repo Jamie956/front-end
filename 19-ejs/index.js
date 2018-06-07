@@ -1,12 +1,16 @@
 var express = require("express");
 var app = express();
-var path = require('path')
+var path = require("path");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-app.get("*", (req, res) => {
-    res.render('hello')
+app.get("/home", (req, res) => {
+  res.render("home", { msg: "hi" });
 });
 
-app.listen(3001,console.log('LISTEN ON PORT 3001'))
+app.get("/about", (req, res) => {
+  res.render("about");
+});
+
+app.listen(3001, console.log("LISTEN ON PORT 3001"));
