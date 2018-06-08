@@ -11,20 +11,26 @@ var vd = require("validator");
 // console.log(vd.escape('< - > - & - /'))
 
 //form
-var data = {
-  name: "tom",
-  age: '18',
-  email: "tom@email.com",
-  password: "abc123"
-};
+// var data = {
+//   name: "tom",
+//   age: '18',
+//   email: "tom@email.com",
+//   password: "abc123"
+// };
 
-function myVd(data) {
-  if (vd.isEmpty(data["name"])) return "name should not be empty";
-  if (!vd.isNumeric(data["age"].toString())) return "age should be num";
-  if (!vd.isEmail(data["email"])) return "not email";
-  if (!vd.isLength(data["password"], { min: 2, max: 6 })) return "pwd should 2-6";
+// function myVd(data) {
+//   if (vd.isEmpty(data["name"])) return "name should not be empty";
+//   if (!vd.isNumeric(data["age"].toString())) return "age should be num";
+//   if (!vd.isEmail(data["email"])) return "not email";
+//   if (!vd.isLength(data["password"], { min: 2, max: 6 })) return "pwd should 2-6";
 
-  return true;
-}
+//   return true;
+// }
 
-console.log(myVd(data));
+// console.log(myVd(data));
+
+//====
+
+// if (!vd.isNumeric(data.phone).toString()) return res.end('Phone should be Number.');
+
+console.log(!vd.isNumeric('123').toString())
