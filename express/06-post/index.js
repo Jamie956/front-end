@@ -13,6 +13,7 @@ app.post('/login', urlencodedParser, (req, res) => {
         'name': req.body.name,
         'password': req.body.password
     };
+    console.log(formdata);
     res.end(JSON.stringify(formdata));
 });
 
