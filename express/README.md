@@ -1,4 +1,4 @@
 ===create skeleton===
-npm i -G express
+npm i -g express-generator
 express --help
 express -e photo
