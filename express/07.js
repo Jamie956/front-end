@@ -1,7 +1,8 @@
+//cookie parser
 var express = require('express');
 var cookieParser = require('cookie-parser');
-
 var app = express();
+
 app.use(cookieParser());
 
 app.get('/get', (req, res) => {
@@ -13,4 +14,4 @@ app.get('/set', (req, res) => {
     res.end('ok');
 });
 
-app.listen(3000, () => console.log('listen on port: 3000'));
+app.listen(3000, console.log("LISTEN ON PORT: 3000"));

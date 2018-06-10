@@ -1,3 +1,4 @@
+//express RESTful
 var express = require('express');
 var app = express();
 
@@ -25,4 +26,4 @@ app.get('/flights/:from-:to', function (req, res) {
   res.send(req.params)
 })
 
-app.listen(3000, () => console.log('listen on port: 3000'));
+app.listen(3000, console.log("LISTEN ON PORT: 3000"));

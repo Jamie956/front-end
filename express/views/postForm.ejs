@@ -1,0 +1,29 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<form id="myform" method="post" action="/login">
+    <fieldset>
+        name
+        <input id="name" name="name" type="text"> password
+        <input id="password" type="text" name="password">
+        <input class="submit" type="submit" value="Submit">
+    </fieldset>
+</form>
+
+<script>
+    $('#myform').submit(function (e) {
+        var form = $(this)
+        $.ajax({
+            // contentType: "application/json; charset=utf-8",
+            type: form.attr('method'),
+            url: form.attr('action'),
+            data: form.serialize(),
+            success: function (data) {
+                alert('success')
+            },
+            error: function (err) {
+                alert('failure')
+            }
+        })
+        e.preventDefault()
+    })
+</script>
