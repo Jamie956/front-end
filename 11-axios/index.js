@@ -65,6 +65,4 @@ app.get("/add2", (req, res) => {
     .catch(e => console.log("Oops", e));
 });
 
-app.listen("3000", () => {
-  console.log("listen on port 3000");
-});
+app.listen(3000,console.log('LISTEN ON PORT 3000'))
