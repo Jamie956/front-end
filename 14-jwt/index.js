@@ -56,6 +56,5 @@ router.get("/api", (req, res) => {
   res.send("welcome use api.");
 });
 
-app.listen("3000", () => {
-  console.log("listen on port 3000");
-});
+app.listen(3000, console.log("LISTEN ON PORT 3000."));
+

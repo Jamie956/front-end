@@ -1,95 +1,72 @@
 var _ = require("lodash");
 
-//get k-v by key arr
-var b = _.pick({ id: 0, name: "aaa", age: 33 }, ["name", "age"]);
-console.log(b);
+_.pick({ id: 0, name: "aaa", age: 33 }, ["name", "age"]);
+//{ name: 'aaa', age: 33 }
 
-//get objct all keys
-var c = _.keys({ id: 0, name: "aaa", age: 33 });
-console.log(c);
+_.keys({ id: 0, name: "aaa", age: 33 });
+//[ 'id', 'name', 'age' ]
 
-//get by key
-var d = _.find(
-  [{ id: 0, name: "aaa", age: 33 }, { id: 1, name: "bbb", age: 25 }],
-  ["id", 0]
-);
-console.log(d);
+_.find([{ id: 0, name: "aaa" }, { id: 1, name: "bbb" }], ["id", 0]);
+//{ id: 0, name: 'aaa', age: 33 }
 
-//arr to obj and set key with name
-var a = _.keyBy(
-  [{ id: 0, name: "aaa", age: 33 }, { id: 1, name: "bbb", age: 25 }],
-  "name"
-);
-console.log(a);
+_.keyBy([{ id: 0, name: "aaa" }, { id: 1, name: "bbb" }], "name");
+//{ aaa: { id: 0, name: 'aaa' }, bbb: { id: 1, name: 'bbb' } }
 
-//filter by k-v
-var e = _.filter(
-  [{ id: 0, name: "aaa", age: 33 }, { id: 1, name: "bbb", age: 25 }],
-  ["name", "aaa"]
-);
-console.log(e);
+_.filter([{ id: 0, name: "aaa" }, { id: 1, name: "bbb" }], ["name", "aaa"]);
+// [ { id: 0, name: 'aaa' } ]
 
-var f = _.max([1, 2, 3, 4]);
-var g = _.min([1, 2, 3, 4]);
-var h = _.sum([1, 2, 3, 4]);
-console.log(f);
-console.log(g);
-console.log(h);
+_.max([1, 2, 3, 4]); //4
+_.min([1, 2, 3, 4]); //1
+_.sum([1, 2, 3, 4]); //10
 
 //find max id in json arr
-var i = [{ id: 0, name: "aaa", age: 33 }, { id: 1, name: "bbb", age: 25 }];
-var j = _.find(i, ["id", _.max(_.map(i, "id"))]);
-console.log(j);
+var i = [{ id: 0, name: "aaa" }, { id: 1, name: "bbb" }];
+_.find(i, ["id", _.max(_.map(i, "id"))]);
+//{ id: 1, name: 'bbb' }
 
 //update json arr
-let k = _.keyBy(
-  [{ id: 0, name: "aaa", age: 33 }, { id: 1, name: "bbb", age: 25 }],
-  "id"
-);
-k[0].name = "ccc";
-var l = _.map(k);
-console.log(l);
+let k = _.keyBy([{ id: 0, name: "Tom" }, { id: 1, name: "Bob" }], "id");
+k[0].name = "Muji";
+_.map(k); //[ { id: 0, name: 'Muji' }, { id: 1, name: 'Bob' } ]
 
 //find obj deep
-var m = _.map(
+_.map(
   [
     {
       owner: "Colin",
-      pets: [{ name: "dog1" }, { name: "dog2" }]
+      pets: [{ name: "cat" }, { name: "dog" }]
     },
     {
       owner: "John",
-      pets: [{ name: "dog3" }, { name: "dog4" }]
+      pets: [{ name: "eye" }, { name: "deer" }]
     }
   ],
   "pets[0].name"
 );
-console.log(m);
+//[ 'cat', 'eye' ]
 
 //random
-var n = _.random(15, 20);
-console.log(n);
+_.random(15, 20); //15-20
 
 //same as extend
-var o = _.assign({ name: "colin", car: "suzuki" }, { name: "james", age: 17 });
-console.log(o);
+_.assign({ name: "colin", car: "suzuki" }, { name: "james", age: 17 });
+// { name: 'james', car: 'suzuki', age: 17 }
 
 //delete json ele
-var p = _.omit({ name: "colin", car: "suzuki", age: 17 }, ["car", "age"]);
-console.log(p);
+_.omit({ name: "colin", car: "suzuki", age: 17 }, ["car", "age"]);
+// { name: 'colin' }
 
 //handle convert error
 // JSON.parse('a');
-var q = _.attempt(JSON.parse.bind(null, "a")); //Return an error object
-console.log(q);
+_.attempt(JSON.parse.bind(null, "a")); //Return an error object
 
 //remove: 0 false 空格
-var r = _.compact([-1, 0, 1, false, 2, "", 3, "jj"]);
-console.log(r);
+_.compact([-1, 0, 1, false, 2, "", 3, "jj"]);
+// [ -1, 1, 2, 3, 'jj' ]
 
 //diff
-var s = _.difference([1, 2, 3, 4, 5], [5, 2, 10]);
-console.log(s);
+_.difference([1, 2, 3, 4, 5], [5, 2, 10]);
+// [ 1, 3, 4 ]
 
 //groupBy
 _.groupBy([6.1, 4.2, 6.3], Math.floor);

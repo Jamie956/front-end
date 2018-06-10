@@ -1,29 +1,38 @@
 const express = require("express");
 const app = express();
-app.use(express.static("./public"));
 const path = require("path");
 const multer = require("multer");
-const md5 = require("md5");
+const fs = require("fs");
 
-const storage = multer.diskStorage({
-  //   destination: function(req, file, cb) {
-  //     cb(null, path.resolve("images"));
-  //   },
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+app.use(express.static("./public"));
 
-  destination: path.resolve("images"), //auto create dir
-
-  //   destination: path.resolve("/images"), //auto create dir
-  filename: function(req, file, cb) {
-    cb(
-      null,
-      file.fieldname + "-" + md5(file) + path.extname(file.originalname)
-    );
-  }
+app.get("/", (req, res) => {
+  res.render("index");
 });
 
-const limits = { fileSize: 2 * 1024 }; //byte
+function createDir(dir) {
+  fs.existsSync(dir) || fs.mkdirSync(dir);
+}
 
-const upload = multer({ storage: storage, limits: limits });
+function newFileName(file) {
+  return file.fieldname + path.extname(file.originalname);
+}
+const destDir = path.resolve("public/images")
+createDir(destDir)
+
+const upload = multer({
+  storage: multer.diskStorage({
+    destination: function(req, file, cb) {
+      cb(null, destDir);
+    },
+    filename: function(req, file, cb) {
+      cb(null, newFileName(file));
+    }
+  }),
+  limits: { fileSize: 2 * 1024 * 1024 } //2M
+});
 
 app.post("/upload", upload.single("logo"), (req, res, next) => {
   console.log(req.file);
@@ -33,4 +42,5 @@ app.post("/upload", upload.single("logo"), (req, res, next) => {
     res.end("fail");
   }
 });
-app.listen(3000, console.log("listen on port 3000"));
+
+app.listen(3000, console.log("LISTEN ON PORT 3000."));
