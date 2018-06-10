@@ -1,3 +1,3 @@
-exports.sayHi = function sayHi(content) {
-    console.log('hi, ' + content)
-}
+exports.sayHi = function(name) {
+  console.log("hi, " + name);
+};

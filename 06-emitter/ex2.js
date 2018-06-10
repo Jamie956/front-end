@@ -1,6 +1,8 @@
-var events = require('events');
-var myEmitter = new events.EventEmitter();
-myEmitter.on('error', function (err) {
-    console.log('ERROR: ' + err.message);
+var events = require("events");
+var errEmitter = new events.EventEmitter();
+
+errEmitter.on("error", err => {
+  console.log("ERROR: " + err.message);
 });
-myEmitter.emit('error', new Error('Something is wrong.'));
+
+errEmitter.emit("error", new Error("Something wrong"));

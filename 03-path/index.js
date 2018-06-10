@@ -1,25 +1,38 @@
-const path = require('path');
+const path = require("path");
 
-console.log('basename => '+path.basename('/foo/bar/baz/asdf/quux.html', '.html'));
+//quux
+path.basename("/foo/bar/baz/asdf/quux.html", ".html");
 
-console.log('dirname => '+path.dirname('/foo/bar/baz/asdf/quux'));
+// /foo/bar/baz/asdf
+path.dirname("/foo/bar/baz/asdf/quux");
 
-console.log('extname => '+path.extname('index.html'));
+//.html
+path.extname("index.html");
 
-console.log('__dirname => '+__dirname);
+//D:\project\thinkNodejs\03-path
+__dirname;
 
-console.log('join => '+path.join(__dirname, 'css'));
+//D:\project\thinkNodejs\03-path\css
+path.join(__dirname, "css");
 
-console.log('join => '+path.join('/foo', 'bar', 'baz/asdf', 'quux', '..'));
+// \foo\bar\baz\asdf
+path.join("/foo", "bar", "baz/asdf", "quux", "..");
 
-console.log('parse => '+path.parse('C:\\path\\dir\\file.txt'));
+// \foo\bar\baz\asdf\quux
+path.join("/foo", "bar", "baz/asdf", "quux")
 
-console.log('resolve => '+path.resolve());
+//[object Object]
+path.parse("C:\\path\\dir\\file.txt");
 
-console.log('resolve => '+path.resolve('css'));
+//D:\project\thinkNodejs\03-path
+path.resolve();
 
-console.log('resolve => '+path.resolve('/foo/bar', './baz'));
+//D:\project\thinkNodejs\03-path\css
+path.resolve("css");
 
-console.log('resolve => '+path.resolve('/foo'));
+//D:\foo\bar\baz
+path.resolve("/foo/bar", "./baz");
 
-// const css = require('../../build/bundle.server');
+//D:\foo
+path.resolve("/foo");
+

@@ -9,7 +9,6 @@ function mkdirs(dirname, callback) {
     } else {
       mkdirs(path.dirname(dirname), function() {
         fs.mkdir(dirname, callback);
-        console.log(`Create ${dirname} in ${path.dirname(dirname)}`);
       });
     }
   });
@@ -20,9 +19,7 @@ function mkdirsSync(dirname) {
   if (fs.existsSync(dirname)) {
     return true;
   } else {
-      console.log('=='+path.dirname(dirname))
     if (mkdirsSync(path.dirname(dirname))) {
-        console.log(dirname)
       fs.mkdirSync(dirname);
       return true;
     }
@@ -33,4 +30,4 @@ function mkdirsSync(dirname) {
 //   console.log("done");
 // });
 
-mkdirsSync('../hello/a/b/c');
+mkdirsSync("hello/a/b/c");
