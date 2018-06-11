@@ -1,10 +1,11 @@
-var promise = new Promise(function(resolve) {
+//simple example
+var promise = new Promise(resolve => {
   resolve(42);
 });
 promise
-  .then(function(value) {
+  .then(value => {
     console.log(value);
   })
-  .catch(function(error) {
+  .catch(error => {
     console.error(error);
   });

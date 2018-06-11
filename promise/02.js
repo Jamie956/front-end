@@ -1,3 +1,4 @@
+//return a promise
 function myAsyncFun() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
