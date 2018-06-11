@@ -20,9 +20,9 @@ function getURL(URL) {
 // 运行示例
 var URL = "http://httpbin.org/get";
 getURL(URL)
-  .then(function onFulfilled(value) {
-    console.log(value);
+  .then(function onFulfilled(val) {
+    console.log(val);
   })
-  .catch(function onRejected(error) {
-    console.error(error);
+  .catch(function onRejected(e) {
+    console.error(e);
   });
