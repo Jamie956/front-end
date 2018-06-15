@@ -34,10 +34,11 @@ const upload = multer({
   limits: { fileSize: 2 * 1024 * 1024 } //2M
 });
 
-//single upload
-app.post("/upload", upload.single("logo"), (req, res, next) => {
-  console.log(req.file);
-  if (req.file) {
+//multi upload
+var cpUpload = upload.fields([{ name: 'avatar', maxCount: 1 }, { name: 'gallery', maxCount: 2 }])
+app.post("/upload", cpUpload, (req, res, next) => {
+  console.log(req.files);
+  if (req.files) {
     res.end("ok");
   } else {
     res.end("fail");
