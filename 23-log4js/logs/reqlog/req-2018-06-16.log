@@ -5,3 +5,28 @@
 [2018-06-16T21:01:37.006] [INFO] default - [::1 GET / 200 9ms][ HTTP/1.1 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]
 [2018-06-16T21:03:38.839] [INFO] default - test info 1
 [2018-06-16T21:03:38.848] [INFO] default - [::1 GET / 500 9ms][ HTTP/1.1 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]
+[2018-06-16T21:14:40.797] [DEBUG] default - test2
+[2018-06-16T21:14:40.800] [INFO] default - test3
+[2018-06-16T21:14:40.800] [WARN] default - test4
+[2018-06-16T21:14:40.802] [ERROR] default - test4
+[2018-06-16T21:14:40.802] [FATAL] default - test4
+[2018-06-16T21:14:40.803] [INFO] default - test info 1
+[2018-06-16T21:14:40.811] [INFO] default - [::1 GET / 200 13ms][ HTTP/1.1 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]
+[2018-06-16T21:15:48.261] [DEBUG] default - de
+[2018-06-16T21:15:48.263] [INFO] default - in
+[2018-06-16T21:15:48.264] [WARN] default - wa
+[2018-06-16T21:15:48.265] [ERROR] default - er
+[2018-06-16T21:15:48.265] [FATAL] default - fa
+[2018-06-16T21:15:48.274] [INFO] default - [::1 GET / 304 13ms][ HTTP/1.1 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]
+[2018-06-16T21:29:42.701] [DEBUG] default - de
+[2018-06-16T21:29:42.704] [INFO] default - in
+[2018-06-16T21:29:42.709] [WARN] default - wa
+[2018-06-16T21:29:42.710] [ERROR] default - er
+[2018-06-16T21:29:42.710] [FATAL] default - fa
+[2018-06-16T21:29:42.722] [INFO] default - [::1 GET / 304 20ms][ HTTP/1.1 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]
+[2018-06-16T21:32:44.487] [DEBUG] default - logger de
+[2018-06-16T21:32:44.489] [INFO] default - logger in
+[2018-06-16T21:32:44.489] [WARN] default - logger wa
+[2018-06-16T21:32:44.490] [ERROR] default - logger er
+[2018-06-16T21:32:44.490] [FATAL] default - logger fa
+[2018-06-16T21:32:44.499] [INFO] default - [::1 GET / 304 13ms][ HTTP/1.1 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]

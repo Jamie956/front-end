@@ -12,6 +12,8 @@ log4js.configure({
       type: "dateFile",
       filename: "logs/reqlog/",
       pattern: "req-yyyy-MM-dd.log",
+      encoding : 'utf-8',
+      maxLogSize : 10,
       alwaysIncludePattern: true
     },
     err: {
@@ -42,7 +44,6 @@ exports.getLogger = function(name) {
 };
 
 exports.useLogger = function(app, logger) {
-  //用来与express结合
   app.use(
     log4js.connectLogger(logger || log4js.getLogger("default"), {
       format:
