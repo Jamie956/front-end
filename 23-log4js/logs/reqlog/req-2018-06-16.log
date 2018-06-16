@@ -1,0 +1,7 @@
+[2018-06-16T21:00:39.889] [INFO] default - test info 1
+[2018-06-16T21:00:39.908] [INFO] default - [::1 GET / 500 17ms][ HTTP/1.1 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]
+[2018-06-16T21:00:40.061] [INFO] default - [::1 GET /favicon.ico 404 2ms][http://localhost:3000/ HTTP/1.1 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]
+[2018-06-16T21:01:36.997] [INFO] default - test info 1
+[2018-06-16T21:01:37.006] [INFO] default - [::1 GET / 200 9ms][ HTTP/1.1 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]
+[2018-06-16T21:03:38.839] [INFO] default - test info 1
+[2018-06-16T21:03:38.848] [INFO] default - [::1 GET / 500 9ms][ HTTP/1.1 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]
