@@ -1,8 +1,0 @@
-[2018-06-16T21:01:36.999] [INFO] oth - test info 2
-[2018-06-16T21:14:40.803] [INFO] oth - test info 2
-[2018-06-16T21:15:48.265] [INFO] oth - oth
-[2018-06-16T21:29:42.711] [INFO] oth - oth
-[2018-06-16T21:32:44.491] [INFO] oth - othlogger in
-[2018-06-16T21:32:44.492] [WARN] oth - othlogger wa
-[2018-06-16T21:32:44.492] [ERROR] oth - othlogger er
-[2018-06-16T21:32:44.492] [FATAL] oth - othlogger fa
