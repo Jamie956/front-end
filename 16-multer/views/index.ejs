@@ -1,55 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- single upload -->
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="logo">
+    <input type="submit" value="提交">
+</form>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</head>
-
-<body>
-    <!-- <form class="form-horizontal" enctype='multipart/form-data' method='post' action='javascript:;'>
-        <input type="file" id="choose" />
-        <button onclick="handleUpload()">上传</button>
-        <img class="newImg" />
-    </form>
-
-    <script>
-
-        function handleUpload() {
-            let file = document.getElementById("choose").files[0];
-            let formData = new FormData();
-            formData.append("avatar", file);
-            $.ajax({
-                type: 'POST',
-                url: '/upload',
-                data: formData,
-                async: false,
-                cache: false,
-                contentType: false,
-                processData: false,
-                success: function (data) {
-                    $(".newImg").attr("src", data.filePath);
-                },
-                error: function (err) {
-                    console.log(err.message);
-                }
-            })
-        }
-    </script> -->
-
-
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="logo">
-        <input type="submit" value="提交">
-    </form>
-
-    <!-- multi upload -->
-    <!-- <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="avatar">
-        <input type="file" name="gallery">
-        <input type="submit" value="提交">
-    </form> -->
-</body>
-
-</html>
+<!-- multi upload -->
+<!-- <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="avatar">
+    <input type="file" name="gallery">
+    <input type="submit" value="提交">
+</form> -->
