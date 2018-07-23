@@ -12,9 +12,19 @@ app.get("/", (req, res) => {
 });
 
 //single upload
-app.post("/upload", upload.single("logo"), (req, res, next) => {
+app.post("/single", upload.single("logo"), (req, res, next) => {
   console.log(req.file);
   if (req.file) {
+    res.end("ok");
+  } else {
+    res.end("fail");
+  }
+});
+
+var cpUpload = upload.fields([{ name: 'avatar', maxCount: 1 }, { name: 'gallery', maxCount: 2 }])
+app.post("/multi", cpUpload, (req, res, next) => {
+  console.log(req.files);
+  if (req.files) {
     res.end("ok");
   } else {
     res.end("fail");
