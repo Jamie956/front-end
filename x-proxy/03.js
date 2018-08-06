@@ -4,27 +4,38 @@ var http = require("http"),
 //创建代理服务
 var proxy = httpProxy.createProxyServer({});
 
-// proxyReq: This event is emitted before the data is sent. It gives you a chance to alter the proxyReq request object. Applies to "web" connections
+// 代理服务请求前触发
 proxy.on("proxyReq", function(proxyReq, req, res, options) {
+  console.log("proxyReq");
+  //设置代理请求头
   proxyReq.setHeader("X-Special-Proxy-Header", "foobar");
 });
 
+// 代理服务响应时触发
 proxy.on("proxyRes", function(proxyRes, req, res) {
-  console.log(
-    "RAW Response from the target",
-    JSON.stringify(proxyRes.headers, true, 2)
-  );
+  console.log("proxyRes");
 });
 
+// 代理服务发生错误时触发
 proxy.on("error", function(err, req, res) {
   res.writeHead(500, {
     "Content-Type": "text/plain"
   });
-  res.end("Something went wrong. And we are reporting a custom error message.");
+  res.end("Something went wrong.");
 });
 
-var server = http.createServer(function(req, res) {
-  proxy.web(req, res, { target: "http://localhost:8082" });
-});
+//3000端口的服务，代理端口8082的服务
+http
+  .createServer(function(req, res) {
+    console.log("3000 req");
+    proxy.web(req, res, { target: "http://localhost:8082" });
+  })
+  .listen(3000, console.log("listening on port 3000"));
 
-server.listen(3000, console.log("listening on port 3000"));
+//api服务，端口为8082
+http
+  .createServer(function(req, res) {
+    console.log("8082 req");
+    res.end("api data");
+  })
+  .listen(8082, console.log("API server listening on port 8082"));
