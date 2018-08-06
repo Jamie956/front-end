@@ -1,6 +1,6 @@
 ```
 ===Enforcing(增强)===
-bitwise               禁用位运算符
+bitwise               禁用位运算符(如^，|，&)
 camelcase             使用驼峰命名(camelCase)或全大写下划线命名(UPPER_CASE)
 curly                 在条件或循环语句中使用{}来明确代码块
 eqeqeq                使用===和!==替代==和!=
@@ -52,8 +52,4 @@ sub            　　　　 允许使用person[‘name’]
 supernew        　　　 允许使用new function() {…}和new Object
 validthis        　　  允许严格模式下在非构造函数中使用this
 noyield        　　　  允许发生器中没有yield语句
-
-===config===
-unused //禁止定义变量却不使用
-asi  //允许省略分号
 ```
