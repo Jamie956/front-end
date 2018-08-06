@@ -1,4 +1,5 @@
 ```
+===潜在错误===
 box-model        　　　　　 设置width或height的同时，还设置为border或padding，则必须设置box-sizing
 display-property-grouping 设置display属性时，不能包含其他不必要的代码，如display:inline，又设置height值
 duplicate-properties     　不允许包含重复的样式属性
@@ -36,5 +37,4 @@ outline-none    禁用outline:none
 
 qualified-headings    <h1-h6>应该被设置为顶级样式，所以.box h3{}会提示警告；而h3{}则不会
 unique-headings    当多个规则定义针对同一标题的属性时，会出现警告
-
 ```
