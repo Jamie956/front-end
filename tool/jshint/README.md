@@ -52,4 +52,8 @@ sub            　　　　 允许使用person[‘name’]
 supernew        　　　 允许使用new function() {…}和new Object
 validthis        　　  允许严格模式下在非构造函数中使用this
 noyield        　　　  允许发生器中没有yield语句
+
+===config===
+unused //是否禁止定义变量却不使用
+
 ```
