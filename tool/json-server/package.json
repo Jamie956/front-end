@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch db.json"
+    "a": "json-server --watch db.json",
+    "b": "json-server --watch db.json --port 3004",
+    "c": "json-server db.json --routes routes.json"
   },
   "keywords": [],
   "author": "",
