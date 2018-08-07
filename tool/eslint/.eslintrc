@@ -1,6 +1,9 @@
 {
-    "rules": {
-        "semi": ["error", "always"],
-        "quotes": ["error", "double"]
-    }
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "no-console": [2],
+    "no-mixed-spaces-and-tabs": [0],
+    "no-plusplus":[2]
+  }
 }
