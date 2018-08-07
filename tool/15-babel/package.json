@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel index.js -d lib",
-    "bnode": "babel-node index.js"
+    "a": "babel index.js",
+    "b": "babel index.js -o bundle.js",
+    "c": "babel index.js -d dist",
+    "d": "babel src -d dist",
+    "e": "babel src -d dist -s",
+    "f": "babel-node index.js"
   },
   "keywords": [],
   "author": "",
