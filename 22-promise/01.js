@@ -109,4 +109,19 @@ function test08() {
     });
 }
 
-test07();
+//promise all
+function test09() {
+  function getData(URL) {
+    return new Promise((resolve, reject) => {
+      if (true) {
+        resolve(URL);
+      } else {
+        reject(new Error("Something Wrong"));
+      }
+    });
+  }
+  Promise.all([getData("baidu.com"), getData("google.com")])
+    .then(val => console.log(val))
+    .catch(e => console.log(e));
+}
+test09();
