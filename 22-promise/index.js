@@ -109,7 +109,7 @@ function test08() {
     });
 }
 
-//promise all
+//promise all,多个resolve 的值返回一个数组
 function test09() {
   function getData(URL) {
     return new Promise((resolve, reject) => {
@@ -124,4 +124,45 @@ function test09() {
     .then(val => console.log(val))
     .catch(e => console.log(e));
 }
-test09();
+
+//promise all
+function test10() {
+  function timerPromisefy(delay) {
+    return new Promise(function(resolve) {
+      setTimeout(function() {
+        resolve(delay);
+      }, delay);
+    });
+  }
+  var startDate = Date.now();
+  // 异步,所有promise变为resolve后程序退出
+  Promise.all([
+    timerPromisefy(1),
+    timerPromisefy(32),
+    timerPromisefy(64),
+    timerPromisefy(128)
+  ]).then(res => {
+    console.log(Date.now() - startDate + "ms");
+    console.log(res);
+  });
+}
+
+//promise race
+function test11() {
+  function timerPromisefy(delay) {
+    return new Promise(function(resolve) {
+      setTimeout(function() {
+        resolve(delay);
+      }, delay);
+    });
+  }
+  // 任何一个promise变为resolve或reject 的话程序就停止运行
+  Promise.race([
+    timerPromisefy(1),
+    timerPromisefy(32),
+    timerPromisefy(64),
+    timerPromisefy(128)
+  ]).then(value => console.log(value));
+}
+
+test11();
