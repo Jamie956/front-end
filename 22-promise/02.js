@@ -1,16 +1,18 @@
-//return a promise
-function myAsyncFun() {
+//调用异步函数，返回promise对象
+function asyncFun() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve("Async Hello World.");
+      resolve("Got it");
     }, 2000);
   });
 }
 
-myAsyncFun()
+asyncFun()
   .then(data => {
-    console.log(data); //Async Hello World.
+    console.log(data);
   })
   .catch(e => {
     console.log(e);
   });
+
+console.log("Go on");
