@@ -1,4 +1,4 @@
-// require("dotenv").config();
+require("dotenv").config();
 
 var x = {
   host: process.env.DB_HOST,
