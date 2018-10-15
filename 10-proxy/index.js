@@ -2,7 +2,7 @@ var http = require("http");
 var httpProxy = require("http-proxy");
 
 function test01() {
-  //开放3000端口httpProxy服务，当访问8000时，代理访问9000端口
+  //开放3000端口httpProxy服务，当访问3000时，代理访问9000端口
   httpProxy
     .createProxyServer({ target: "http://localhost:9000" })
     .listen(3000, console.log("Proxy server listening on port 3000"));
