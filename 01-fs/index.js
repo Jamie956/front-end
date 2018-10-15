@@ -2,7 +2,7 @@ var fs = require("fs");
 var http = require("http");
 var path = require("path");
 
-//读取文件
+//读取文件 fs.readFile()
 function test01() {
   fs.readFile("./resource.json", "utf8", function(err, data) {
     if (err) throw err;
@@ -10,7 +10,7 @@ function test01() {
   });
 }
 
-//分片读取
+//分片读取 fs.createReadStream()
 function test02() {
   var stream = fs.createReadStream("./resource.json");
   stream.on("data", function(chunk) {
@@ -21,7 +21,7 @@ function test02() {
   });
 }
 
-//管道读取
+//管道读取 fs.createReadStream()
 function test03() {
   http
     .createServer((req, res) => {
@@ -31,7 +31,7 @@ function test03() {
     .listen(3000, console.log("listen on port 3000."));
 }
 
-// 递归创建目录 异步方法
+//递归创建目录 异步方法 fs.mkdir()
 function test04() {
   function mkdirs(dirname, callback) {
     fs.exists(dirname, function(exists) {
@@ -49,7 +49,7 @@ function test04() {
   });
 }
 
-// 递归创建目录 同步方法
+//递归创建目录 同步方法 fs.mkdirSync()
 function test05() {
   function mkdirsSync(dirname) {
     if (fs.existsSync(dirname)) {
@@ -63,4 +63,5 @@ function test05() {
   }
   mkdirsSync("hello/a/b/c");
 }
+
 test05();

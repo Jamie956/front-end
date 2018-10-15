@@ -16,11 +16,11 @@ function test01() {
 
   //当前路径
   rs = __dirname;
-  console.log(rs); // \03-path
+  console.log(rs); // \02-path
 
   //合并路径
   rs = path.join(__dirname, "css");
-  console.log(rs); //03-path\css
+  console.log(rs); //02-path\css
 
   rs = path.join("/foo", "bar", "baz/asdf", "quux", "..");
   console.log(rs); // /foo/bar/baz/asdf
@@ -30,15 +30,15 @@ function test01() {
 
   //转化为抽象路径
   rs = path.parse("C:\\path\\dir\\file.txt");
-  console.log(rs);
+  console.log(rs);// root, dir, base, ext, name
 
   //当前路径
   rs = path.resolve();
-  console.log(rs); // /home/jamie/project/nodejs/03-path
+  console.log(rs); // /home/jamie/project/nodejs/02-path
 
   //合并路径
   rs = path.resolve("css");
-  console.log(rs); // /home/jamie/project/nodejs/03-path/css
+  console.log(rs); // /home/jamie/project/nodejs/02-path/css
 
   //合并路径
   rs = path.resolve("/foo/bar", "./baz");
