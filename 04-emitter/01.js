@@ -1,23 +1,22 @@
 var events = require("events");
-var eventEmitter = new events.EventEmitter();
+var em = new events.EventEmitter();
 
 function test01() {
   //订阅hi事件
-  eventEmitter.on("hi", function() {
+  em.on("hi", () => {
     console.log("Welcome!");
   });
-
   //发布hi事件
-  eventEmitter.emit("hi");
+  em.emit("hi");
 }
 
 function test02() {
   //订阅error事件
-  eventEmitter.on("error", err => {
+  em.on("error", err => {
     console.log(err.message);
   });
   //发布error事件
-  eventEmitter.emit("error", new Error("Something wrong"));
+  em.emit("error", new Error("Something wrong"));
 }
 
-test02();
+test01();
