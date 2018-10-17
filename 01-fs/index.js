@@ -2,26 +2,26 @@ var fs = require("fs");
 var http = require("http");
 var path = require("path");
 
-//读取文件 fs.readFile()
+//Read File
 function test01() {
-  fs.readFile("./resource.json", "utf8", function(err, data) {
+  fs.readFile("./resource.json", "utf8", (err, data) => {
     if (err) throw err;
     console.log(data);
   });
 }
 
-//分片读取 fs.createReadStream()
+//Read Stream
 function test02() {
-  var stream = fs.createReadStream("./resource.json");
-  stream.on("data", function(chunk) {
-    console.log(chunk);
-  });
-  stream.on("end", function() {
-    console.log("finished");
-  });
+  fs.createReadStream("./resource.json", { encoding: "utf8" })
+    .on("data", chunk => {
+      console.log(chunk);
+    })
+    .on("end", () => {
+      console.log("done");
+    });
 }
 
-//管道读取 fs.createReadStream()
+//Stream Pipe
 function test03() {
   http
     .createServer((req, res) => {
@@ -64,4 +64,4 @@ function test05() {
   mkdirsSync("hello/a/b/c");
 }
 
-test05();
+test03();
