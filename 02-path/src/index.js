@@ -15,7 +15,7 @@ function test01() {
   rs = path.resolve();
   console.log(rs); // /home/jamie/project/nodejs/02-path/src
 
-  //合并路径
+  //当前路径与参数合并
   rs = path.resolve("css");
   console.log(rs); // /home/jamie/project/nodejs/02-path/src/css
 }
