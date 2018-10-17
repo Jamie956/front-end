@@ -31,15 +31,18 @@ function test03() {
     .listen(3000, console.log("listen on port 3000."));
 }
 
-//递归创建目录 异步方法 fs.mkdir()
+//递归创建目录 异步方法
 function test04() {
-  function mkdirs(dirname, callback) {
-    fs.exists(dirname, function(exists) {
+  function mkdirs(dir, cb) {
+    //文件夹是否存在
+    fs.exists(dir, exists => {
       if (exists) {
-        callback();
+        cb();
       } else {
-        mkdirs(path.dirname(dirname), function() {
-          fs.mkdir(dirname, callback);
+        //递归
+        mkdirs(path.dirname(dir), () => {
+          //创建文件夹
+          fs.mkdir(dir, cb);
         });
       }
     });
@@ -49,19 +52,19 @@ function test04() {
   });
 }
 
-//递归创建目录 同步方法 fs.mkdirSync()
+//递归创建目录 同步方法
 function test05() {
-  function mkdirsSync(dirname) {
-    if (fs.existsSync(dirname)) {
+  function mkdirs(dir) {
+    if (fs.existsSync(dir)) {
       return true;
     } else {
-      if (mkdirsSync(path.dirname(dirname))) {
-        fs.mkdirSync(dirname);
+      if (mkdirs(path.dirname(dir))) {
+        fs.mkdirSync(dir);
         return true;
       }
     }
   }
-  mkdirsSync("hello/a/b/c");
+  mkdirs("hello/a/b/c");
 }
 
-test03();
+test05();
