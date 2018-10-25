@@ -1,11 +1,11 @@
-var isNumber = require('is-number');
-var slice = require('array-slice');
+var isNumber = require("is-number");
+var slice = require("array-slice");
 
-//获取数组arr前num位元素的数组
+//获取数组arr前num位元素的数组或数字
 module.exports = function arrayFirst(arr, num) {
   //检查数组是否合法
   if (!Array.isArray(arr)) {
-    throw new Error('array-first expects an array as the first argument.');
+    throw new Error("array-first expects an array as the first argument.");
   }
   //数组无元素就返回null
   if (arr.length === 0) {
