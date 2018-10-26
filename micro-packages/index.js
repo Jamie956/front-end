@@ -106,4 +106,9 @@ function test13() {
   console.log(mirrarray(["this", "that", "another"]));
 }
 
-test13();
+function test14() {
+  const chunks = require("./array-chunk");
+  console.log(chunks([1, 2, 3, 4, 5], 2)); // [[1, 2], [3, 4], [5]]
+}
+
+test14();
