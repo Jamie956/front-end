@@ -69,4 +69,14 @@ function test08() {
   ); //[1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz']
 }
 
-test08();
+function test09() {
+  const mapArray = require("./map-array");
+  const obj = {
+    giorgio: "Bianchi",
+    gino: "Rossi"
+  };
+  console.log(mapArray(obj, (key, value) => key + " " + value));
+  //['giorgio Bianchi', 'gino Rossi']
+}
+
+test09();

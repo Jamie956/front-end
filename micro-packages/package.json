@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "array-slice": "^1.1.0",
-    "is-number": "^7.0.0"
+    "is-number": "^7.0.0",
+    "map-obj": "^3.0.0"
   }
 }
