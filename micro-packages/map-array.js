@@ -1,7 +1,7 @@
 "use strict";
 const map = require("map-obj");
 
-//对象转数组
+//对象键值转成数组
 function mapToArray(obj, fn) {
   let idx = 0;
   //obj -> [k, v] -> obj

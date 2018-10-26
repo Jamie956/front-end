@@ -79,4 +79,11 @@ function test09() {
   //['giorgio Bianchi', 'gino Rossi']
 }
 
-test09();
+function test10() {
+  var inArray = require("./in-array");
+  console.log(inArray(["a", "b", "c"], "a")); //true
+  console.log(inArray(null, "a")); //false
+  console.log(inArray(null)); //false
+}
+
+test10();
