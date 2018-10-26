@@ -97,8 +97,13 @@ function test11() {
 function test12() {
   var swapArray = require("./swap-array");
   var arr = ["a", "b", "c"];
-  console.log(swapArray(arr, 0, 2));//[ 'c', 'b', 'a' ]
+  console.log(swapArray(arr, 0, 2)); //[ 'c', 'b', 'a' ]
   console.log(arr);
 }
 
-test12();
+function test13() {
+  var mirrarray = require("./mirrarray");
+  console.log(mirrarray(["this", "that", "another"]));
+}
+
+test13();
