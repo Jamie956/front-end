@@ -94,4 +94,11 @@ function test11() {
   console.log(list); // returns ['a', 'b', 'e', 'd'] (no 'c')
 }
 
-test11();
+function test12() {
+  var swapArray = require("./swap-array");
+  var arr = ["a", "b", "c"];
+  console.log(swapArray(arr, 0, 2));//[ 'c', 'b', 'a' ]
+  console.log(arr);
+}
+
+test12();
