@@ -21,4 +21,10 @@ function test03() {
   console.log(last(arr, 3)); //['d', 'e', 'f']
 }
 
-test03();
+function test04() {
+  var flatten = require("./arr-flatten");
+  var arr = ["a", ["b", ["c"]], "d", ["e"]];
+  console.log(flatten(arr)); //['a', 'b', 'c', 'd', 'e']
+}
+
+test04();
