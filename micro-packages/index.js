@@ -86,4 +86,12 @@ function test10() {
   console.log(inArray(null)); //false
 }
 
-test10();
+function test11() {
+  var remove = require("./unordered-array-remove");
+
+  var list = ["a", "b", "c", "d", "e"];
+  remove(list, 2); // remove 'c'
+  console.log(list); // returns ['a', 'b', 'e', 'd'] (no 'c')
+}
+
+test11();
