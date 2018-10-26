@@ -40,4 +40,14 @@ function test05() {
   console.log(dedupe(aaa, value => value.a)); //[{a: 2, b: 1}, {a: 1,b: 2}]
 }
 
-test05();
+function test06() {
+  var array = require("./array-range");
+
+  console.log(array(3)); //[ 0, 1, 2 ]
+  console.log(array(1, 4)); //[ 1, 2, 3 ]
+
+  console.log(array(5).map(x => x * x)); //[ 0, 1, 4, 9, 16 ]
+  console.log(array(2, 10).filter(x => x % 2 === 0)); //[ 2, 4, 6, 8 ]
+}
+
+test06();
