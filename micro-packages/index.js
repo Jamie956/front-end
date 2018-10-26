@@ -7,9 +7,18 @@ function test01() {
 
 function test02() {
   var first = require("./array-first");
-  console.log(first(["a", "b", "c", "d", "e", "f"]));
-  console.log(first(["a", "b", "c", "d", "e", "f"], 1));
-  console.log(first(["a", "b", "c", "d", "e", "f"], 3));
+  var arr = ["a", "b", "c", "d", "e", "f"];
+  console.log(first(arr)); //a
+  console.log(first(arr, 1)); //a
+  console.log(first(arr, 3)); //[ 'a', 'b', 'c' ]
 }
 
-test01();
+function test03() {
+  var last = require("./array-last");
+  var arr = ["a", "b", "c", "d", "e", "f"];
+  console.log(last(arr)); //f
+  console.log(last(arr, 1)); //f
+  console.log(last(arr, 3)); //['d', 'e', 'f']
+}
+
+test03();
