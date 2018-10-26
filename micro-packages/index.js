@@ -27,4 +27,17 @@ function test04() {
   console.log(flatten(arr)); //['a', 'b', 'c', 'd', 'e']
 }
 
-test04();
+function test05() {
+  var dedupe = require("./dedupe");
+
+  var a = [1, 2, 2, 3];
+  console.log(dedupe(a)); //[1, 2, 3]
+
+  var aa = [{ a: 2 }, { a: 1 }, { a: 1 }, { a: 1 }];
+  console.log(dedupe(aa)); //[{a: 2}, {a: 1}]
+
+  var aaa = [{ a: 2, b: 1 }, { a: 1, b: 2 }, { a: 1, b: 3 }, { a: 1, b: 4 }];
+  console.log(dedupe(aaa, value => value.a)); //[{a: 2, b: 1}, {a: 1,b: 2}]
+}
+
+test05();
