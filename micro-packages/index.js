@@ -50,4 +50,13 @@ function test06() {
   console.log(array(2, 10).filter(x => x % 2 === 0)); //[ 2, 4, 6, 8 ]
 }
 
-test06();
+function test07() {
+  var diff = require("./arr-diff");
+
+  var a = ["a", "b", "c", "d"];
+  var b = ["b", "c"];
+
+  console.log(diff(a, b)); //['a', 'd']
+}
+
+test07();

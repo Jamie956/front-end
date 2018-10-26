@@ -1,6 +1,6 @@
 "use strict";
 
-//去除数组中重复元素
+//去除数组中重复第2次以上的元素
 function dedupe(client, hasher) {
   //hasher 数组元素转成指定特征，默认转成str
   hasher = hasher || JSON.stringify;
