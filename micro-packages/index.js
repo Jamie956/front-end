@@ -137,4 +137,21 @@ function test17() {
   console.log(ret); //[(["foo", 2], ["bar", 4])]
 }
 
-test17();
+function test18() {
+  var zipmap = require("./object/zipmap");
+
+  var keys = ["a", "b", "c"];
+  var vals = [1, 2, 3];
+  var map = zipmap(keys, vals);
+  console.log(map); //{ a: 1, b: 2, c: 3 }
+
+  var objs = [{ key: "foo", value: "bar" }, { key: "hi", value: "bye" }];
+  var map2 = zipmap(objs);
+  console.log(map2); //{ foo: 'bar', hi: 'bye' }
+
+  var pairs = [["foo", "bar"], ["hi", "bye"]];
+  var map3 = zipmap(pairs);
+  console.log(map3); //{ foo: 'bar', hi: 'bye' }
+}
+
+test18();
