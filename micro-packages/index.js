@@ -131,4 +131,10 @@ function test16() {
   console.log(objectValues({ foo: 0, bar: 1 })); //[0, 1]
 }
 
-test16();
+function test17() {
+  const pairs = require("./object/object-pairs");
+  const ret = pairs({ foo: 2, bar: 4 });
+  console.log(ret); //[(["foo", 2], ["bar", 4])]
+}
+
+test17();
