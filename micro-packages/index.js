@@ -126,4 +126,9 @@ function test15() {
   console.log(newObject2); //{bar: false}
 }
 
-test15();
+function test16() {
+  const objectValues = require("./object/object-values");
+  console.log(objectValues({ foo: 0, bar: 1 })); //[0, 1]
+}
+
+test16();
