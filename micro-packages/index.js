@@ -111,4 +111,19 @@ function test14() {
   console.log(chunks([1, 2, 3, 4, 5], 2)); // [[1, 2], [3, 4], [5]]
 }
 
-test14();
+function test15() {
+  const filterObj = require("./object/filter-obj");
+
+  const obj = {
+    foo: true,
+    bar: false
+  };
+
+  const newObject = filterObj(obj, (key, value) => value === true);
+  console.log(newObject); //{foo: true}
+
+  const newObject2 = filterObj(obj, ["bar"]);
+  console.log(newObject2); //{bar: false}
+}
+
+test15();
