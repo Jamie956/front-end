@@ -154,4 +154,13 @@ function test18() {
   console.log(map3); //{ foo: 'bar', hi: 'bye' }
 }
 
-test18();
+function test19() {
+  var deepAssign = require("./object/deep-assign");
+
+  console.log(
+    deepAssign({ a: { b: 0 } }, { a: { b: 1, c: 2 } }, { a: { c: 3 } })
+  );
+  //{a: {b: 1, c: 3}}
+}
+
+test19();
