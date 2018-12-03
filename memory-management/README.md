@@ -12,3 +12,7 @@ linux-tick-processor v8.log
 查看进程内存占用
 
 process.memoryUsage();
+
+
+### test03
+堆外内存测试
