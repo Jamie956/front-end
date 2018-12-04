@@ -2,14 +2,10 @@ var http = require("http");
 
 function test01() {
   http
-    //创建server
     .createServer((req, res) => {
-      //Header: Content-Type
       res.writeHead(200, { "Content-Type": "text/plain" });
-      //响应内容
       res.end("Hello World");
     })
-    //3000端口监听
     .listen(3000, console.log("Listening on port 3000."));
 }
 
@@ -65,4 +61,4 @@ function test05() {
   req.body; //获取post过来的data
   res.json(true); //返回数据
 }
-test04();
+test01();
