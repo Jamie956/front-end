@@ -1,0 +1,11 @@
+{
+    "editor.fontSize": 12,
+    "explorer.confirmDelete": false,
+    "workbench.iconTheme": "vscode-icons",
+    "explorer.confirmDragAndDrop": false,
+    "editor.tabSize": 2,
+    "files.associations": {
+        "*.ejs": "html"
+    },
+    "open-in-browser.default": "chrome"
+}
