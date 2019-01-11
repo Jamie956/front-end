@@ -1,7 +1,0 @@
-{
-    "rules": {
-        "declaration-block-trailing-semicolon": null,
-        "color-no-hex":true
-    }
-    
-}
