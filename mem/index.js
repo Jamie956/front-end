@@ -12,6 +12,7 @@ var useMem = function() {
   return arr;
 };
 
+//堆外内存使用测试
 // var useMem = function() {
 //   var size = 200 * 1024 * 1024;
 //   var buffer = new Buffer(size);
