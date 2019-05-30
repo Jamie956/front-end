@@ -7,11 +7,11 @@ var options = {
   method: "GET"
 };
 
-var req = http.request(options, function(res) {
+var req = http.request(options, res => {
   console.log(res.statusCode);
-  console.log(JSON.stringify(res.headers));
+  console.log(res.headers);
   res.setEncoding("utf8");
-  res.on("data", function(chunk) {
+  res.on("data", chunk => {
     console.log(chunk);
   });
 });
