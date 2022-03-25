@@ -1,0 +1,106 @@
+<!-- awesome single -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+<style>
+  .myselect {
+    width: 50%;
+  }
+
+  .select2-container .select2-selection--single {
+    height: 34px;
+    line-height: 34px;
+  }
+</style>
+
+<select class="myselect"></select>
+<br>
+<button id="getSelected">Get!</button>
+<button id="disableSelect">Disable</button>
+<button id="enableSelect">Enable</button>
+<button id="clearSelect">Clear</button>
+
+<script>
+  $(function () {
+    var data = [{
+      id: 0,
+      text: 'enhancement',
+      nam: 'tom'
+    }, {
+      id: 1,
+      text: 'bug'
+    }, {
+      id: 2,
+      text: 'duplicate'
+    }, {
+      id: 3,
+      text: 'invalid'
+    }, {
+      id: 4,
+      text: 'wontfix'
+    }];
+
+    var $myselect = $(".myselect");
+    $myselect.select2({
+      data: data,//载入数据
+      selectOnClose: true,//关闭dropdown时，是否选择高亮的item
+      closeOnSelect: true,//选择item后，是否关闭dropdown
+      templateResult: function (data) {//定义选项中的item的格式
+        return `* ${data.text}`;
+      },
+      templateSelection: function (data) {//定义选中的item的格式
+        return `Selected: ${data.text}`;
+      },
+      tags: true,//是否允许搜索框创建item
+      // theme: "classic",//使用旧版主题
+      width: 'resolve',//need to override the changed default 不是很懂
+    })
+
+    $('#disableSelect').click(function () {
+      $myselect.prop("disabled", true);//disable select
+    })
+
+    $('#enableSelect').click(function () {
+      $myselect.prop("disabled", false);//enable select
+    })
+
+    //选中item触发
+    // $myselect.on('select2:select', function (e) {
+    //   var data = e.params.data;
+    //   console.log('select')
+    //   console.log(data)
+    // });
+    //打开dropdown触发
+    // $myselect.on("select2:open", function (e) {
+    //   console.log('open')
+    //   console.log(e)
+    // });
+    //关闭dropdown触发
+    // $myselect.on("select2:close", function (e) {
+    //   console.log('close')
+    //   console.log(e)
+    // });
+    // 取消选择触发
+    // $myselect.on("select2:unselect", function (e) {
+    //   console.log('unselect')
+    //   console.log(e)
+    // });
+    //选项发生改变触发
+    // $myselect.on("change", function (e) {
+    //   console.log('change')
+    //   console.log(e)
+    // });
+
+    $('#getSelected').click(function () {
+      var selectedData = $myselect.select2("data")[0]; //获取选中的item, 单选
+      console.log(selectedData)
+    })
+
+    $('#clearSelect').click(function () {
+      $myselect.val(null).trigger("change");//清空选中item
+    })
+
+  })
+</script>

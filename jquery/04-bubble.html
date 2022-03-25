@@ -1,0 +1,29 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+	#parent {
+		width: 100px;
+		height: 100px;
+		background-color: red;
+	}
+
+	#child {
+		width: 50px;
+		height: 50px;
+		background-color: blue;
+	}
+</style>
+
+<div id="parent">
+	<div id="child" class="child"></div>
+</div>
+
+<script>
+	$('#parent').click(function (e) {
+		console.log(this.id);
+	});
+	$('#child').click(function (e) {
+		console.log(this.id);
+		e.stopPropagation();// stop bubble event 
+	});
+</script>

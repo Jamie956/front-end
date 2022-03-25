@@ -1,0 +1,48 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<h3>miku</h3>
+
+<script>
+  (function ($) {
+    $.fn.extend({
+      func0: function (options) {
+        options = $.init(options)
+        //this 指向的是当前通过选择器获取的 jQuery 对象
+        //this.each遍历所有元素
+        this.each(function () {
+          $(this).text(options.text);
+          $(this).css("color", options.color);
+          options.complete();
+          $.func1();//调用其他方法
+        });
+      },
+    });
+
+    $.extend({
+      func1: function () {
+        console.log('func1');
+      },
+      func2: function () {
+        console.log('func2');
+      },
+      init: function (options) {
+        options = $.extend({
+          text: "Hello, World!",
+          color: null
+        }, options);
+        return options;
+      }
+    })
+  })(jQuery);
+
+  $("h3").func0({
+    text: "Salut, le monde!",
+    color: "#005dff",
+    complete: function () {
+      alert("Done!");
+    }
+  });
+
+  $.func1()
+  $.func2()
+</script>

@@ -1,0 +1,15 @@
+{
+	"name": "ugliftjs",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "webpack"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"uglifyjs-webpack-plugin": "^1.2.2",
+		"webpack": "^3.4.0"
+	}
+}

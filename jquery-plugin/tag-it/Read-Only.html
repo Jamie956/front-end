@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Tag-it! Example</title>
+		<link href="css/jquery.tagit.css" rel="stylesheet" type="text/css">
+		<link href="css/tagit.ui-zendesk.css" rel="stylesheet" type="text/css">
+
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js" ></script>
+		<script type="text/javascript" src="js/tag-it.js" ></script>
+		<script>
+			$(function() {
+	            $('#readOnlyTags').tagit({
+	                readOnly: true
+	            });				
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<h3>Read-only</h3>
+        <form>
+            <p>Example of read only tags.</p>
+            <ul id="readOnlyTags">
+                <li>Tag1</li>
+                <li>Tag2</li>
+            </ul>
+        </form>
+	</body>
+
+</html>

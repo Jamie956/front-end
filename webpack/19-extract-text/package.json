@@ -1,0 +1,11 @@
+{
+  "name": "extract-text",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "webpack"
+  },
+  "devDependencies": {
+    "extract-text-webpack-plugin": "^3.0.0",
+    "webpack": "^3.4.0"
+  }
+}

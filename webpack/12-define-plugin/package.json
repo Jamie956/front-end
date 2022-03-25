@@ -1,0 +1,15 @@
+{
+	"name": "define",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "npx cross-env DEBUG=true webpack --config webpack.dev.js",
+		"prod": "npx cross-env DEBUG=false webpack --config webpack.prod.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"webpack": "^3.4.0"
+	}
+}

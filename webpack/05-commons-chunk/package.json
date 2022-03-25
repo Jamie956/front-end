@@ -1,0 +1,14 @@
+{
+	"name": "commons-chunk",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"start": "webpack"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"webpack": "^3.4.0"
+	}
+}

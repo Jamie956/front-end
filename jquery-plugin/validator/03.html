@@ -1,0 +1,39 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/localization/messages_zh.min.js"></script>
+
+<script>
+    $().ready(function () {
+        $("#commentForm").validate({
+            submitHandler: function (form) {
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost:3000/login',
+                    data: $('#commentForm').serialize(),
+                    success: function (data) {
+                        alert('success')
+                    },
+                    error: function (err) {
+                        alert('failure')
+                    }
+                })
+            }
+        })
+    });
+</script>
+
+<form class="cmxform" id="commentForm" method="POST" action="#">
+    <fieldset>
+        <p>
+            <label for="name">Name</label>
+            <input id="name" name="name" minlength="2" type="text" required>
+        </p>
+        <p>
+            <label for="password">PWD</label>
+            <input id="password" type="text" name="password" required>
+        </p>
+        <p>
+            <input class="submit" type="submit" value="Submit">
+        </p>
+    </fieldset>
+</form>

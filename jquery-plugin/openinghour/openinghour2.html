@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+
+	<body>
+		<input type="text" id="text-oph"/>
+		
+		<div id="opening-hours"></div>
+		
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
+		
+		<script>
+			var arr_data = [{
+				"monday":[{"start":1700,"end":2130}],
+				"tuesday":[{"start":800,"end":1230},{"start":1300,"end":1400},{"start":1500,"end":1600}]
+			}];
+			var json_data = arr_data[0];
+			
+			$('#text-oph').val(JSON.stringify(arr_data));
+			
+			var dayofweek = {
+				0: 'sunday',
+				1: 'monday',
+				2: 'tuesday',
+				3: 'wednesday',
+				4: 'thursday',
+				5: 'friday',
+				6: 'saturday'
+			};
+			
+			var updateOph = function (data) {
+				var _frame = '';
+				for(var i in dayofweek) {
+					for (var j in data) {
+						if( dayofweek[i] === j ) {
+							_frame += [
+//								'<div class="divider"></div>',
+								'<div class="section">',
+								'<div class="row">',
+								'<div class="col s12">',
+								'<div class="col s2">', dayofweek[i], ':</div>',
+								'<div class="col s10" value="' + dayofweek[i] + '">',
+							].join('');
+							for (var k in data[j]) {
+								_frame += [	
+									'<div class="col s12">',
+										'<div class="col s3">',
+										(Number(data[j][k]['start'] / 100)).toFixed(2).toString().replace('.', ':'),
+										'</div>',
+										'<div class="col s3">to</div>',
+										'<div class="col s3">',
+										(Number(data[j][k]['end'] / 100)).toFixed(2).toString().replace('.', ':'),
+										'</div>',
+										'<div class="remove-oph col s3"><i class="material-icons red-text text-accent-3">delete</i></div>',
+									'</div>',
+								].join('');	
+							}							
+							_frame += [
+								'</div>',
+								'</div>',
+								'</div>',
+								'</div>'
+							].join('');
+						}
+					}
+				};
+				$('#opening-hours').html(_frame);
+			}
+			updateOph(json_data);
+			
+			$('.remove-oph').click(function(){
+				var dayofweek = $(this).parent().parent().attr('value');
+				var index = $(this).parent().index();
+				
+				$(this).parent().remove();
+		        json_data[dayofweek].splice(index, 1);
+		        if (json_data[dayofweek][0] == null) {
+		            delete json_data[dayofweek];
+		        }
+		        
+		        var arr = [];
+		        arr.push(json_data);
+		        var setJSON = JSON.stringify(arr);	
+		        $('#text-oph').val(setJSON);		
+			});
+		</script>
+	</body>
+</html>

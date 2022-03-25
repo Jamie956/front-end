@@ -1,0 +1,19 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<ul id="order">
+	<li>hello</li>
+	<li></li>
+	<li></li>
+	<li id="item4">world</li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+
+<script>
+	var $ul = $("#order");
+	//获取ul的子元素li
+	var $lis = $ul.children("li");
+	$lis.css('color', 'red');
+	$('#item4').index('li');//获取元素索引
+</script>

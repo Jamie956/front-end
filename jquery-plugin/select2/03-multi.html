@@ -1,0 +1,58 @@
+<!-- 多选 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+<style>
+  .myselect {
+    width: 50%;
+  }
+</style>
+
+<select class="myselect"></select>
+<br>
+<button id="getSelected">Get!</button>
+
+<script>
+  $(function () {
+    var data = [{
+      id: 0,
+      text: 'enhancement'
+    }, {
+      id: 1,
+      text: 'bug'
+    }, {
+      id: 2,
+      text: 'duplicate'
+    }, {
+      id: 3,
+      text: 'invalid'
+    }, {
+      id: 4,
+      text: 'wontfix'
+    }];
+
+    var $myselect = $('.myselect');
+    $myselect.select2({
+      data: data,//载入数据
+      closeOnSelect: false,//选择item后，是否关闭dropdown
+      maximumSelectionLength: 4,//item选择上限
+      placeholder: 'Select an item',//占位提示文字
+      allowClear: true,//是否允许清除所有已选items
+      tags: true,//是否允许搜索框创建item
+      tokenSeparators: [',', ' '],//items格式
+      multiple: true,//是否多选
+    });
+
+    $('#getSelected').click(function () {
+      var selectedData = $myselect.select2("data"); //获取选中的items, 多选
+      console.log(selectedData)
+    })
+
+    //初始化
+    // $myselect.append(new Option("Jquery", 10001, false, true));
+    //或者
+    $myselect.append("<option value='10001'>Jquery</option>");
+  })
+</script>

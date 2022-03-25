@@ -1,0 +1,37 @@
+<script>
+  function test01() {
+    //this指向上一級
+    console.log(this); // this -> window
+  }
+
+  function test02() {
+    var obj = {
+      a: function() {
+        console.log(this);
+      }
+    };
+
+    //調用對象內的函數，this指向上一級
+    obj.a(); //this -> obj
+
+    //函數重新賦值，脫離對象
+    var vartofun = obj.a;
+    vartofun(); // this -> window
+  }
+
+  function test03() {
+    var obj = {
+      a: function() {
+        setTimeout(function() {
+          console.log(this); //this -> window
+        }, 1000);
+        setTimeout(() => {
+          console.log(this); //this -> obj
+        }, 2000);
+      },
+    };
+    obj.a();
+  }
+
+  test03();
+</script>

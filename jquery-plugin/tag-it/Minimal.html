@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Tag-it! Example</title>
+		<link href="css/jquery.tagit.css" rel="stylesheet" type="text/css">
+		<link href="css/tagit.ui-zendesk.css" rel="stylesheet" type="text/css">
+
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js" ></script>
+		<script type="text/javascript" src="js/tag-it.js" ></script>
+		<script>
+			$(function() {
+				$('#myTags').tagit();
+			});
+		</script>
+
+	</head>
+
+	<body>
+        <h3>Minimal</h3>
+        <form>
+            <p>Vanilla example &mdash; the absolute minimum amount of code required, no configuration. No autocomplete, either. See the other examples for that.</p>
+            <ul id="myTags"></ul>
+            <input type="submit" value="Submit">
+        </form>
+	</body>
+
+</html>

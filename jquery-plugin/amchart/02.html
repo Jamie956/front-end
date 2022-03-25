@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+
+<!-- Resources -->
+<script type="text/javascript" src="js/amcharts.js"></script>
+<script type="text/javascript" src="js/serial.js"></script>
+<script type="text/javascript" src="js/light.js"></script>
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+
+<!--<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>	-->
+
+<!-- Chart code -->
+<script>
+	var chart = AmCharts.makeChart("chartdiv", {
+		"type": "serial",
+		"theme": "light",
+		"dataDateFormat": "YYYY-MM-DD",
+		//y轴
+		"valueAxes": [{
+			"id": "y_total",//给数据图绑定
+			"title": "Total",
+			"position": "left",//左边y轴
+			"autoGridCount": false,
+			"labelFunction": function (value) {
+				return "$" + Math.round(value);//小于0时，需要处理保留小数
+			}
+		}, {
+			"id": "y_count",
+			"title": "Count",
+			"gridAlpha": 0,
+			"position": "right",//右边y轴
+			"autoGridCount": false,
+		}],
+		//图
+		"graphs": [{
+			"id": "bar_total",
+			"valueAxis": "y_total",//指定哪个y轴
+			"lineColor": "#62cf73",//柱状边框颜色
+			"fillColors": "#62cf73",//柱状填充颜色
+			"fillAlphas": 1,
+			"type": "column",//柱状图
+			"title": "Total",
+			"valueField": "total",//对应载入数据的key
+			"clustered": false,
+			"columnWidth": 0.2,//柱子有多粗
+			"legendValueText": "[[]]",
+			"balloonText": "[[title]]<br /><b style='font-size: 130%'>$[[value]]</b>",//hover在柱子上的气泡
+			"precision": 2,//气泡显示小数保留位数
+		}, {
+			"id": "line_count",
+			"valueAxis": "y_count",
+			"bullet": "round",
+			"bulletBorderAlpha": 1,
+			"bulletColor": "#FFFFFF",
+			"bulletSize": 5,
+			"hideBulletsCount": 50,
+			"lineThickness": 2,
+			"lineColor": "#20acd3",//线条颜色
+					    // "type": "smoothedLine",
+			"type": "line",//线图
+			"title": "Count",
+			"useLineColorForBulletBorder": true,
+			"valueField": "count",
+			"legendValueText": "[[]]",
+			"balloonText": "[[title]]<br /><b style='font-size: 130%'>[[value]]</b>",
+			//		    "connect": false
+		}],
+		//x
+		"categoryField": "date",
+		"categoryAxis": {
+			"parseDates": true,
+			"dashLength": 1,
+			"minorGridEnabled": true,
+			"minPeriod": "DD",
+			"equalSpacing": true,
+			"dateFormats":
+				[{ period: 'fff', format: 'JJ:NN:SS' },
+				{ period: 'ss', format: 'JJ:NN:SS' },
+				{ period: 'mm', format: 'JJ:NN' },
+				{ period: 'hh', format: 'JJ:NN' },
+				{ period: 'DD', format: 'MMM DD' },
+				{ period: 'WW', format: 'MMM DD' },
+				{ period: 'MM', format: 'MMM YYYY' },
+				{ period: 'YYYY', format: 'YYYY MMM' }],
+		},
+
+		//others
+		"chartCursor": {
+			"pan": true,
+			"valueLineEnabled": true,
+			"valueLineBalloonEnabled": true,
+			"cursorAlpha": 0,
+			"valueLineAlpha": 0.2,
+		},
+		"legend": {
+			"useGraphSettings": true,
+			"position": "top"
+		},
+		"balloon": {
+			"borderThickness": 1,
+			"shadowAlpha": 0
+		},
+		//data
+		"dataProvider":
+			[{
+				"date": "2013-01-16",
+				"count": 0.1,
+				"total": 0.1
+			}, {
+				"date": "2013-01-17",
+				"count": 0.2,
+				"total": 0.5
+			}]
+	});
+
+	function updateChart(data, minPeriod) {
+		chart.dataProvider = data;
+		chart.categoryAxis.minPeriod = minPeriod;
+		chart.validateNow();
+		chart.validateData();
+
+		console.log(chart);
+	}
+
+	$(function () {
+		var date_range = [
+			{
+				"date": "2013-01-16",
+				"count": 71,
+				"total": 6582
+			}, {
+				"date": "2013-01-17",
+				"count": 74,
+				"total": 6820.5
+			}, {
+				"date": "2013-01-18",
+				"count": 78,
+				"total": 7520.25
+			}, {
+				"date": "2013-01-19",
+				"count": 85,
+				"total": 8500
+			}, {
+				"date": "2013-01-20",
+				"count": 90,
+				"total": 8546
+			}, {
+				"date": "2013-01-21",
+				"count": 0,
+				"total": 0
+			}, {
+				"date": "2013-01-22",
+				"count": 0,
+				"total": 0
+			}, {
+				"date": "2013-01-23",
+				"count": 128,
+				"total": 12505.256
+			}, {
+				"date": "2013-01-24",
+				"count": 122,
+				"total": 11259.256
+			}, {
+				"date": "2013-01-25",
+				"count": 145,
+				"total": 13895.753
+			}, {
+				"date": "2013-01-26",
+				"count": 135,
+				"total": 12537.64
+			}, {
+				"date": "2013-01-27",
+				"count": 129,
+				"total": 11530.689
+			}, {
+				"date": "2013-01-28",
+				"count": 142,
+				"total": 13965.952
+			}, {
+				"date": "2013-01-29",
+				"count": 140,
+				"total": 13568.46
+			}, {
+				"date": "2013-01-30",
+				"count": 135,
+				"total": 12965.731
+			}
+		];
+		var date_month = [
+			{
+				"date": "2017-07-01",
+				"count": 2040,
+				"total": 195205
+			}, {
+				"date": "2017-08-01",
+				"count": 2135,
+				"total": 204582.5
+			}, {
+				"date": "2017-09-01",
+				"count": 2203,
+				"total": 222385.25
+			}, {
+				"date": "2017-10-01",
+				"count": 2356,
+				"total": 229605.25
+			}, {
+				"date": "2017-11-01",
+				"count": 3356,
+				"total": 359605.25
+			}
+		];
+		var date_week = [
+			{
+				"date": "2017-09-18",
+				"count": 680,
+				"total": 55820
+			}, {
+				"date": "2017-09-25",
+				"count": 710,
+				"total": 64208.5
+			}, {
+				"date": "2017-10-02",
+				"count": 782,
+				"total": 72625.25
+			}, {
+				"date": "2017-10-09",
+				"count": 840,
+				"total": 86842
+			}
+		];
+		var date_year = [
+			{
+				"date": "2014-01-01",
+				"count": 75,
+				"total": 6520.5
+			}, {
+				"date": "2015-01-01",
+				"count": 74,
+				"total": 6820.5
+			}, {
+				"date": "2016-01-01",
+				"count": 78,
+				"total": 7520.25
+			}, {
+				"date": "2017-01-01",
+				"count": 85,
+				"total": 8500
+			}
+		];
+
+		$('#btn_range').click(function () {
+			updateChart(date_range, 'DD');
+		});
+		$('#btn_week').click(function () {
+				updateChart(date_week, 'WW');
+		})
+		$('#btn_month').click(function () {
+				updateChart(date_month, 'MM');
+		})
+		$('#btn_year').click(function () {
+				updateChart(date_year, 'YYYY');
+		})
+	})
+</script>
+
+<body>
+	<!-- HTML -->
+	<div id="chartdiv" style="width: 100%;height: 500px;"></div>
+
+	<button id="btn_range">Date Range</button> |
+	<button id="btn_week">Week</button> |
+	<button id="btn_month">Month</button> |
+	<button id="btn_year">Year</button>
+</body>
+
+</html>

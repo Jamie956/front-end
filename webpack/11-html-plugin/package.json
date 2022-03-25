@@ -1,0 +1,15 @@
+{
+	"name": "html-plugin",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"start": "webpack"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"html-webpack-plugin": "^3.0.4",
+		"webpack": "^3.4.0"
+	}
+}

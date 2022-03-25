@@ -1,0 +1,1 @@
+https://github.com/select2/select2
